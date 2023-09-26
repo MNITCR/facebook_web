@@ -1,0 +1,51 @@
+:root{
+    --main-bg: #F0F2F5;
+}
+
+
+body{
+    background: --main-bg;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-wrap: wrap;
+}
+.container-left{
+    width: 50%;
+}
+.container-right{
+    width: 50%;
+
+    /* border: 5px solid #DFE1E3 !important; */
+    /* outline: 5px solid rgb(169, 169, 169); */
+}
+.container-right form{
+    box-shadow: 0px 0px 2px 2px #ECEEF1;
+    border-radius: 3px;
+}
+
+@media screen and (max-width: 768px) {
+    .container{
+        display: flex ;
+        flex-wrap: nowrap;
+        flex-direction: column;
+    }
+    .container-left{
+        width: 100%;
+    }
+    .container-right{
+        width: 100%;
+    }
+}
+
+
+/* forgot */
+.Forgotten a{
+    text-decoration: none;
+}
+.Forgotten a:hover{
+    text-decoration: underline;
+}
