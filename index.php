@@ -1,6 +1,7 @@
 <?php
-  // include_once 'php/login.php';
-  // include_once 'php/register.php';
+  include_once 'php/login.php';
+  include_once 'php/register.php';
+
 ?>
 
 <!DOCTYPE html>
@@ -475,7 +476,7 @@
                 <label for="" class="col-form-label">Let us if this mobile number belongs to you. Enter the code in the SMS sent to :</label>
                 <div class="input-group mt-2">
                   <span class="input-group-text">FB- </span>
-                  <input type="text" class="form-control" id="verify_code">
+                  <input type="text" class="form-control" name="verify_code" id="verify_code">
                 </div>
               </div>
               <div class="mb-3">
@@ -483,7 +484,7 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" id="showModalSignup">Back</button>
-                <button type="button" id="Continue" class="btn btn-primary">Continue</button>
+                <button type="button" name="Continue" id="Continue" class="btn btn-primary">Continue</button>
               </div>
             </form>
           </div>
@@ -494,7 +495,8 @@
 
 
     <!-- =================JS FILE================== -->
-    <script src="js/checkLogin.js"></script>
-    <script src="js/checkRegister.js"></script>
+    <script src="js/checkLogin.js?<?php echo time();?>" type="text/javascript"></script>
+    <!-- <script src="js/checkRegister.js?<?php echo time();?>" type="text/javascript"></script> -->
+    <script src="js/OTPCode.js?<?php echo time();?>" type="text/javascript"></script>
   </body>
 </html>

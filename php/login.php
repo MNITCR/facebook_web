@@ -25,7 +25,6 @@
             if ($result) {
                 // Check if a row was returned (valid login)
                 if (mysqli_num_rows($result) == 1) {
-                    // User is authenticated, you can set a session and redirect to a secure page
                     session_start();
                     $_SESSION['loggedIn'] = true;
                     $_SESSION['emailOrPhone'] = $emailOrPhone;

@@ -8,7 +8,6 @@ $(document).ready(function() {
     function validateFirst_name(input){
         var firstName = input.value;
 
-        console.log(firstName);
         // Check if the input is empty
         if (firstName.trim() === '') {
             input.classList.remove('is-valid', 'is-invalid');
@@ -72,7 +71,6 @@ $(document).ready(function() {
         // Remove any spaces and non-numeric characters from the input
         var numericValue = ERP.replace(/\D/g, '');
         var phoneRegex = /^[0-9]+$/;
-        console.log(numericValue.length);
         if (numericValue.length >= 10 && numericValue.length <= 12 && phoneRegex.test(input.value)) {
             input.classList.remove('is-invalid');
             input.classList.add('is-valid');
@@ -147,10 +145,7 @@ $(document).ready(function() {
         age = currentYear - user_year;
 
         if (age < 15) {
-            swal({
-                text: "Sorry, you must be at least 15 years old to create an account.",
-                icon: "warning",
-            });
+            alert("Sorry, you must be at least 15 years old to create an account.");
             e.preventDefault(); // Prevent form submission
         }
         // console.log(age);
@@ -187,10 +182,7 @@ $(document).ready(function() {
         });
 
         if (!genderSelected) {
-            swal({
-                text: "Please select a gender.",
-                icon: "warning",
-            });
+            alert("Please select a gender.");
             e.preventDefault(); // Prevent form submission
         }
 
@@ -204,11 +196,9 @@ $(document).ready(function() {
             alert('Validation failed. Please check your inputs.');
             e.preventDefault();
         } else {
-            $('#verifyCodeModal').modal('show');
             $('#signup').modal('hide');
-            e.preventDefault();
-            // console.log('Verify Code');
-            // alert('Validation successful. Form will be submitted.');
+            $('#verifyCodeModal').modal('show');
+
         }
     });
 
