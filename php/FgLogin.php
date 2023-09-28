@@ -17,6 +17,7 @@
 
         if($emailOrPhone == "" || $password == "") {
             $alertMessage = "Please enter your email or Password";
+            // echo $alertMessage;
         }else{
             // Query to check if the user exists in the database
             $query = "SELECT mobileOrEmail,password FROM user_table WHERE mobileOrEmail = '$emailOrPhone' AND password = '$password'";
@@ -26,11 +27,13 @@
                 // Check if a row was returned (valid login)
                 if (mysqli_num_rows($result) == 1) {
                     // User is authenticated, you can set a session and redirect to a secure page
+                    	print("User");
+
                     session_start();
                     $_SESSION['loggedIn'] = true;
                     $_SESSION['emailOrPhone'] = $emailOrPhone;
                     $alertMessage = "Login successfully";
-                    echo '<script>alert("' . $alertMessage . '"); window.location.href = "html/home/home.php";</script>';
+                    echo '<script>alert("' . $alertMessage . '"); window.location.href = "../home/home.php";</script>';
                     exit;
                 } else {
                     // Invalid credentials

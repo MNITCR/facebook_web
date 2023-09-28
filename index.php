@@ -1,6 +1,6 @@
 <?php
-  include_once 'php/login.php';
-  include_once 'php/register.php';
+  // include_once 'php/login.php';
+  // include_once 'php/register.php';
 ?>
 
 <!DOCTYPE html>
@@ -56,36 +56,40 @@
           <?php if (!empty($error)): ?>
             <div class="alert alert-danger"><?php echo $error; ?></div>
           <?php endif; ?>
-          
+
           <!-- email -->
           <div class="mb-4">
             <input
-              type="email"
+              type="text"
               name="emailOrPhone"
               class="form-control"
               style="padding: 15px"
-              id="exampleInputEmail1"
+              id="emailOrPhone"
               aria-describedby="emailHelp"
               placeholder="Email address or Phone number"
             />
           </div>
 
           <!-- password -->
-          <div class="mb-3">
+          <div class="input-group mb-3">
             <input
               type="password"
               name="password"
               class="form-control"
               style="padding: 15px"
-              id="exampleInputPassword1"
+              id="PasswordLogin"
               placeholder="Password"
             />
+            <button class="btn btn-outline-secondary" type="button" id="togglePassword" style="border-radius: 0px 5px 5px 0px">
+              <i class="fa fa-eye-slash" aria-hidden="true"></i>
+            </button>
           </div>
 
           <!-- login btn -->
           <button
             type="submit"
             name="login"
+            id="loginButton"
             class="btn btn-primary col-12 mx-auto fw-bold"
             style="font-size: 18px; padding: 10px 20px 10px 20px"
           >
@@ -116,7 +120,7 @@
         <!-- create page -->
         <div class="text-center mt-3">
           <p>
-            <a href="" style="text-decoration: none" class="fw-bold text-dark"
+            <a href="html/404/notFound.php" style="text-decoration: none" class="fw-bold text-dark"
               >Create a Page</a
             >
             for a celebrity, brand or business.
@@ -125,18 +129,13 @@
       </div>
     </section>
 
+
     <!-- sign up -->
-    <div
-      class="modal fade"
-      id="signup"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
+    <div class="modal fade" id="signup" aria-hidden="true" aria-labelledby="exampleModalLabel1" tabindex="-1">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">
+            <h1 class="modal-title fs-5" id="exampleModalLabel1">
               Sign Up<br /><span
                 style="font-size: medium"
                 class="text-secondary fw-normal"
@@ -184,21 +183,24 @@
                 <input
                   type="text"
                   class="form-control"
-                  id="mobileOrEmail"
+                  id="mobileOrEmail_register"
                   name="mobileOrEmail"
                   placeholder="Mobile number or email address"
                 />
               </div>
 
               <!-- password -->
-              <div class="mb-2">
+              <div class="input-group mb-2">
                 <input
-                  type="text"
+                  type="password"
                   class="form-control"
-                  id="password"
+                  id="password_register"
                   name="password"
                   placeholder="New password"
                 />
+                <button class="btn btn-outline-secondary" type="button" id="togglePasswordRegister" style="border-radius: 0px 5px 5px 0px">
+                  <i class="fa fa-eye-slash" aria-hidden="true"></i>
+                </button>
               </div>
 
               <!-- date of birth -->
@@ -278,7 +280,7 @@
                         class="form-select"
                         id="year"
                         title="Year"
-                    >
+                      >
                         <option value="2023" selected="1">2023</option>
                         <option value="2022">2022</option>
                         <option value="2021">2021</option>
@@ -406,40 +408,40 @@
               <div class="">
                 <label for="">Gender </label>
                 <div class="d-flex gap-2 mt-1">
-                    <div class="form-check form-control" >
-                        <div class="" style="display: flex;justify-content: space-between;">
-                            <div class="">
-                                <label class="form-check-label" for="female">Female</label>
-                            </div>
-                            <div class="">
-                                <input
-                                type="radio"
-                                class="form-check-input"
-                                name="gender"
-                                value="1"
-                                id="female" />
-                            </div>
-                        </div>
+                  <div class="form-check form-control" >
+                    <div class="" style="display: flex;justify-content: space-between;">
+                      <div class="">
+                        <label class="form-check-label" for="female">Female</label>
+                      </div>
+                      <div class="">
+                        <input
+                        type="radio"
+                        class="form-check-input"
+                        name="gender"
+                        value="1"
+                        id="female" />
+                      </div>
                     </div>
-                    <div class="form-check form-control">
-                        <div class="" style="display: flex;justify-content: space-between;">
-                            <div class="">
-                                <label class="form-check-label" for="male">Male</label>
-                            </div>
-                            <div class="">
-                                <input
-                                type="radio"
-                                class="form-check-input "
-                                name="gender"
-                                value="2"
-                                id="male" />
-                            </div>
-
-                        </div>
-
+                  </div>
+                  <div class="form-check form-control">
+                    <div class="" style="display: flex;justify-content: space-between;">
+                      <div class="">
+                        <label class="form-check-label" for="male">Male</label>
+                      </div>
+                      <div class="">
+                        <input
+                        type="radio"
+                        class="form-check-input "
+                        name="gender"
+                        value="2"
+                        id="male" />
+                      </div>
                     </div>
+                  </div>
                 </div>
               </div>
+
+              <!-- more information -->
               <div class="mt-2 text-secondary" style="font-size: 13px;">
                 <p >People who use our service may have uploaded your contact information to Facebook. Learn more.</p>
               </div>
@@ -449,7 +451,7 @@
 
               <!-- submit button -->
               <div class="text-center mb-3">
-                <button type="submit" name="sing_up" class="btn btn-success fw-bold" style="padding: 7px 30px 7px 30px;">Sign up</button>
+                <button type="submit" name="sing_up" id="sing_upBtn" class="btn btn-success fw-bold" style="padding: 7px 30px 7px 30px;">Sign up</button>
               </div>
 
             </form>
@@ -458,5 +460,41 @@
         </div>
       </div>
     </div>
+
+
+    <!-- verify OTP-->
+    <div class="modal fade" id="verifyCodeModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-4" id="exampleModalLabel">Enter the confirmation code from the text message</h1>
+          </div>
+          <div class="modal-body">
+            <form method="POST">
+              <div class="mb-3">
+                <label for="" class="col-form-label">Let us if this mobile number belongs to you. Enter the code in the SMS sent to :</label>
+                <div class="input-group mt-2">
+                  <span class="input-group-text">FB- </span>
+                  <input type="text" class="form-control" id="verify_code">
+                </div>
+              </div>
+              <div class="mb-3">
+                <p class="text-primary" style="cursor: pointer;" id="sentAgain">Sent SMS Again</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="showModalSignup">Back</button>
+                <button type="button" id="Continue" class="btn btn-primary">Continue</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- =================JS FILE================== -->
+    <script src="js/checkLogin.js"></script>
+    <script src="js/checkRegister.js"></script>
   </body>
 </html>
