@@ -114,7 +114,123 @@
         </div>
     </div>
 
+
+    <!-- ResetYourPassword Modal -->
+
+    <div aria-live="polite" aria-atomic="true" class="d-flex justify-content-center align-items-center w-100">
+      <!-- Then put toasts within -->
+      <div id="toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+          <img src="" class="rounded me-2" alt="">
+          <strong class="me-auto">Bootstrap</strong>
+          <small>11 mins ago</small>
+          <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+          <img src="../userImg/logoUser.png" alt="" srcset="" style="height: 150px;">
+          <input type="text" name="" id="" class="form-control">
+          <button type="submit" class="btn btn-primary">Log In</button>
+          <hr>
+          <a href="#" style="font-size: 14px;text-decoration: none;" id="NotYou">Not you ?</a>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="modal fade" id="ResetYourPassword" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-4" id="exampleModalLabel">Reset Your Password</h1>
+          </div>
+          <div class="modal-body">
+            <form method="POST">
+              <div class="mb-3">
+                <div class="d-flex">
+                  <div class="col-6 mb-3">
+                    <label for="" class="col-form-label mb-3" style="font-size: 17px;font-weight: 600;">How do you want to receive the code to reset your password?</label>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="SendCode" id="Sendcode" checked>
+                      <label class="form-check-label" for="Sendcode">
+                        Send code to : )
+                        <p style="font-size: 15px;" id="SendCodeP">email@gmail.com</p>
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="SendCode" id="EnterPassword">
+                      <label class="form-check-label" for="EnterPassword" id="EnterPasswordLable">
+                        Enter Password to Log In
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-6 justify-content-center d-flex align-items-center">
+                    <div class="text-center">
+                      <div class="mb-2">
+                        <img src="../userImg/logoUser.png" alt="user" style="height: 50px;">
+                      </div>
+                      <span class="mt-2" style="font-weight: 600;" id="fullName">TH MN</span>
+                      <div class="d-flex flex-column" style="position: relative; top: -2px;">
+                        <span style="font-size: 14px;">Facebook user</span>
+                        <a href="#" style="font-size: 14px;text-decoration: none;" id="NotYou">Not you ?</a>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary fw-bold" id="EnterResetYourPassword">Enter Password to Log In</button>
+                <button type="button" id="ContinueResetYourPassword" class="btn btn-primary fw-bold">Continue</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Enter Security code -->
+    <div class="modal fade" id="EnterSecurityCode" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-4" id="exampleModalLabel">Enter security code</h1>
+          </div>
+          <div class="modal-body">
+            <form method="POST">
+              <div class="mb-4">
+                <label for="" class="col-form-label mb-3" style="font-size: 17px;font-weight: 600;">Please check your emails for a message with your code. Your code is 6 numbers long.</label>
+                <div class="d-flex align-items-center gap-3">
+                  <div class="">
+                    <input type="text" class="form-control p-3" id="EnterCodeSecurity" placeholder="Enter code">
+                  </div>
+                  <div class="">
+                    <label class="EnterCodeSecurity" for="">
+                      We Sent your code to :
+                      <p style="font-size: 15px;" class="mt-1" id="EnterCodeSecurityP">email@gmail.com</p>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+              </div>
+              <div class="" style="justify-content: space-between;display: flex;" style="width: 100%;">
+                <a href="#" id="DidntGetAcode" style="left: 0;text-decoration: none;">Didn't get a code ?</a>
+                <div class="">
+                  <button type="button" class="btn btn-secondary fw-bold" id="CancelEnterSecurityCode">Cancel</button>
+                  <button type="button" id="ContinueEnterSecurityCode" class="btn btn-primary fw-bold">Continue</button>
+                </div>
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- =================JS FILE================= -->
-    <script src="../../js/searchUser.js"></script>
+    <script src="../../js/searchUser.js?<?php echo time() ;?>" type="text/javascript"></script>
+    <script src="../../js/ResetYourPassword.js?<?php echo time() ;?>" type="text/javascript"></script>
+
 </body>
 </html>

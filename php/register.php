@@ -1,6 +1,5 @@
 <?php
     include 'php/conn.php';
-
     // Include the database connection and initialize the alert message
     $alertMessage = '';
 
@@ -37,6 +36,8 @@
 
 
     // Check if the form is submitted
+    $OTPMessage = "";
+
     if(isset($_POST['Continue'])){
         $fname = $_POST['first_name'];
         $surname = $_POST['surname'];
@@ -47,11 +48,20 @@
         $birthday_year = $_POST['birthday_year'];
         $inputOTP = $_POST['verify_code'];
         $gender = $_POST['gender'];
+        $OTP_CODE = $_POST['OTP_CODE'];
+        session_start();
+        $OTP_SESSION= $_SESSION['CODE_OTP'];
+
+        // print($OTP_CODE.'||'.$fname.'||'.$surname.'||'.$mobile.'||'.$pass.'||'.$birthday_day.'||'.$birthday_month.'||'.$birthday_year.'||'.$inputOTP.'||'.$gender);
 
         if (empty($inputOTP)) {
-            $alertMessage = 'Please enter your OTP code';
+            $OTPMessage = 'Please enter your OTP code';
             // Handle the error, show an alert, or return an error response
-        } else {
+        }
+        else if($inputOTP != $OTP_CODE || $inputOTP != $OTP_SESSION){
+            $OTPMessage = 'The code otp not found!';
+        }
+        else {
             // Your database connection and query for inserting user data
             // include 'php/conn.php'; // Include your database connection
 
@@ -62,12 +72,11 @@
                 // OTP sent successfully
                 $alertMessage = 'Register successfully';
                 // Redirect or display a success message
-                echo '<script>alert("' . $alertMessage . '"); window.location.href = "../../home/home.php";</script>';
+                echo '<script>alert("' . $alertMessage . '"); window.location.href = "html/home/home.php";</script>';
             } else {
                 $alertMessage = "Error: " . mysqli_error($conn);
                 // Handle the database error, show an alert, or return an error response
             }
         }
     }
-
 ?>

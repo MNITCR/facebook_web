@@ -45,7 +45,9 @@
     $response = json_decode($output, true);
 
     if ($response && $response['ok']) {
-        $alertMessage = "Sent successfully to $mobile";
+        $OTPAlertMessage = "Sent successfully to <a href='https://t.me/facebook_otpbot' target='_blank'> Click here to Get code</a>";
+        session_start();
+        $_SESSION['CODE_OTP'] = $randomCode;
     } else {
         echo 'Error sending code: ' . $response['description'];
     }

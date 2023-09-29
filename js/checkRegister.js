@@ -197,8 +197,6 @@ $(document).ready(function() {
             e.preventDefault();
         } else {
             $('#signup').modal('hide');
-            $('#verifyCodeModal').modal('show');
-
         }
     });
 
