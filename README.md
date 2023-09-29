@@ -13,3 +13,7 @@ CREATE TABLE user_table (
     created_at TIMESTAMP NULL DEFAULT NULL,
     updated_at TIMESTAMP NULL DEFAULT NULL
 );
+
+
+========================Download PHPMailer===================
+https://github.com/PHPMailer/PHPMailer
