@@ -496,7 +496,7 @@
 
     <!-- =================JS FILE================== -->
     <script src="js/checkLogin.js?<?php echo time();?>" type="text/javascript"></script>
-    <!-- <script src="js/checkRegister.js?<?php echo time();?>" type="text/javascript"></script> -->
-    <script src="js/OTPCode.js?<?php echo time();?>" type="text/javascript"></script>
+    <script src="js/checkRegister.js?<?php echo time();?>" type="text/javascript"></script>
+    <!-- <script src="js/OTPCode.js?<?php echo time();?>" type="text/javascript"></script> -->
   </body>
 </html>
