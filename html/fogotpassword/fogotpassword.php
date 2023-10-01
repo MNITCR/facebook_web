@@ -1,6 +1,7 @@
 <?php
-    include '../../php/FgLogin.php';
-
+  include '../../php/FgLogin.php';
+  include '../../php/CheckNewPass.php';
+  session_start();
 ?>
 
 <!DOCTYPE html>
@@ -31,6 +32,11 @@
 </head>
 <body style="background: #F0F2F5;">
     <!-- Display the alert message if it's not empty -->
+    <?php if (!empty($OTPAlertMessage)) : ?>
+      <script>
+        alert("<?php echo $OTPAlertMessage; ?>");
+      </script>
+    <?php endif; ?>
     <?php if (!empty($alertMessage)) : ?>
       <script>
         alert("<?php echo $alertMessage; ?>");
@@ -116,20 +122,24 @@
 
 
     <!-- ResetYourPassword Modal -->
-
-    <div aria-live="polite" aria-atomic="true" class="d-flex justify-content-center align-items-center w-100">
+    <div  class="d-flex justify-content-center align-items-center w-100" style="position: relative;bottom: 220px;z-index: 9999;">
       <!-- Then put toasts within -->
-      <div id="toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+      <div id="toast" class="toast" role="alert"  >
         <div class="toast-header">
-          <img src="" class="rounded me-2" alt="">
-          <strong class="me-auto">Bootstrap</strong>
-          <small>11 mins ago</small>
-          <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+          <div class="d-flex justify-content-end align-items-end" style="width: 100%;">
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+          </div>
         </div>
-        <div class="toast-body">
-          <img src="../userImg/logoUser.png" alt="" srcset="" style="height: 150px;">
-          <input type="text" name="" id="" class="form-control">
-          <button type="submit" class="btn btn-primary">Log In</button>
+        <div class="toast-body text-center">
+          <div class="mb-3">
+            <img src="../userImg/logoUser.png" alt="" srcset="" style="height: 150px;">
+          </div>
+          <div class="mb-3">
+            <input type="hidden" id="ToastsInputEmail">
+            <input type="hidden" id="ToastsInputEmailGetPass">
+            <input type="text" name="ToastsInputPassword" id="ToastsInputPassword" class="form-control" placeholder="Enter password">
+          </div>
+          <button type="submit" class="btn btn-primary col-12" id="ToastsButtonLogin">Log In</button>
           <hr>
           <a href="#" style="font-size: 14px;text-decoration: none;" id="NotYou">Not you ?</a>
         </div>
@@ -150,10 +160,10 @@
                   <div class="col-6 mb-3">
                     <label for="" class="col-form-label mb-3" style="font-size: 17px;font-weight: 600;">How do you want to receive the code to reset your password?</label>
                     <div class="form-check">
-                      <input class="form-check-input" type="radio" name="SendCode" id="Sendcode" checked>
+                      <input class="form-check-input" type="radio" name="SendCode" id="SendCode" checked>
                       <label class="form-check-label" for="Sendcode">
                         Send code to : )
-                        <p style="font-size: 15px;" id="SendCodeP">email@gmail.com</p>
+                        <p style="font-size: 15px;" id="SendCodeP"><!-- Get Email or Phone from search  --></p>
                       </label>
                     </div>
                     <div class="form-check">
@@ -179,7 +189,9 @@
                 </div>
               </div>
 
+
               <div class="modal-footer">
+                <input type="hidden" id="EnterPasswordInput">
                 <button type="button" class="btn btn-secondary fw-bold" id="EnterResetYourPassword">Enter Password to Log In</button>
                 <button type="button" id="ContinueResetYourPassword" class="btn btn-primary fw-bold">Continue</button>
               </div>
@@ -196,18 +208,19 @@
           <div class="modal-header">
             <h1 class="modal-title fs-4" id="exampleModalLabel">Enter security code</h1>
           </div>
-          <div class="modal-body">
+            <div class="modal-body">
             <form method="POST">
               <div class="mb-4">
                 <label for="" class="col-form-label mb-3" style="font-size: 17px;font-weight: 600;">Please check your emails for a message with your code. Your code is 6 numbers long.</label>
                 <div class="d-flex align-items-center gap-3">
-                  <div class="">
+                  <div id="mainOTPCodeEM">
+                    <input type='hidden' id='OTPFromRestEmail' name='OTPFromRestEmail' value='<?php echo $_SESSION['OTPFromRestEmail'] ?>'>
                     <input type="text" class="form-control p-3" id="EnterCodeSecurity" placeholder="Enter code">
                   </div>
                   <div class="">
                     <label class="EnterCodeSecurity" for="">
                       We Sent your code to :
-                      <p style="font-size: 15px;" class="mt-1" id="EnterCodeSecurityP">email@gmail.com</p>
+                      <p style="font-size: 15px;" class="mt-1" id="EnterCodeSecurityP"><!-- Get Email or Phone from search  --></p>
                     </label>
                   </div>
                 </div>
@@ -215,7 +228,7 @@
               <div class="modal-footer">
               </div>
               <div class="" style="justify-content: space-between;display: flex;" style="width: 100%;">
-                <a href="#" id="DidntGetAcode" style="left: 0;text-decoration: none;">Didn't get a code ?</a>
+                <a href="#" id="DidNotGetACode" style="left: 0;text-decoration: none;">Didn't get a code ?</a>
                 <div class="">
                   <button type="button" class="btn btn-secondary fw-bold" id="CancelEnterSecurityCode">Cancel</button>
                   <button type="button" id="ContinueEnterSecurityCode" class="btn btn-primary fw-bold">Continue</button>
@@ -228,9 +241,55 @@
       </div>
     </div>
 
+
+    <!-- Update Password -->
+    <div class="modal fade" id="UpdatePasswordModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Create New Password</h1>
+            <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+          </div>
+          <div class="modal-body">
+            <form method="POST">
+              <div class="mb-3">
+                <label for="message-text" class="col-form-label">New Password :</label>
+                <div class="input-group">
+                  <input type="password" class="form-control" id="newPassword" name="newPassword" placeholder="New Password"/>
+                  <button class="btn btn-outline-secondary" type="button" id="togglePasswordRegister1" style="border-radius: 0px 5px 5px 0px">
+                    <i class="fa fa-eye-slash" aria-hidden="true"></i>
+                  </button>
+                </div>
+                <!-- check Character -->
+                <div id="CheckSpecialCharacter1" class="text-danger"></div>
+              </div>
+              <div class="mb-3">
+                <label for="message-text" class="col-form-label">Confirm Password :</label>
+                <div class="input-group">
+                  <input type="password" class="form-control" id="ConfirmNewPassword" name="ConfirmNewPassword" placeholder="Confirm Password"/>
+                  <button class="btn btn-outline-secondary" type="button" id="togglePasswordRegister2" style="border-radius: 0px 5px 5px 0px">
+                    <i class="fa fa-eye-slash" aria-hidden="true"></i>
+                  </button>
+                </div>
+                <!-- check Character -->
+                <div id="CheckSpecialCharacter2" class="text-danger"></div>
+              </div>
+              <input type="hidden" id="EmailOrPhonenumberUpdatePassword" name="EmailOrPhonenumberUpdatePassword" />
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary fw-bold" data-bs-dismiss="modal">Cancel</button>
+                <button type="submit" class="btn btn-primary fw-bold" id="UpdatePasswordSubmit" name="UpdatePasswordSubmit">Save Change</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
     <!-- =================JS FILE================= -->
     <script src="../../js/searchUser.js?<?php echo time() ;?>" type="text/javascript"></script>
     <script src="../../js/ResetYourPassword.js?<?php echo time() ;?>" type="text/javascript"></script>
+    <script src="../../js/CheckNewPass.js?<?php echo time() ;?>" type="text/javascript"></script>
 
 </body>
 </html>
