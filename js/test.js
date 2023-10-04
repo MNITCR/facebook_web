@@ -90,6 +90,47 @@ $(document).ready(function() {
         $(this).find('svg path').attr('fill', '#0866FF');
     });
 
-    // 
+    // =====================Main-Dropdown-Menu-Nav-Right==================
+    var showAndHideDropdownMenu = false;
+    $('.Menu-Main').click(() => {
+        $('.Dropdown-Message-Nav-Right').css('display', 'none');
+        if(showAndHideDropdownMenu == false){
+            $('.Main-Dropdown-Menu-Nav-Right').css('display', 'block');
+            // alert('Dropdown');
+            showAndHideDropdownMenu = true;
+
+        }else{
+            $('.Main-Dropdown-Menu-Nav-Right').css('display', 'none');
+            // alert('Dropdown 12312');
+            showAndHideDropdownMenu = false;
+
+            // Click event to icon
+            $('.flex-medium-nav svg path').attr('fill', '#606266');
+            $('.flex-right-nav li svg path').attr('fill', '#050505');
+        }
+
+    });
+    // =====================End Main-Dropdown-Menu-Nav-Right==================
+
+    // =====================Main-Dropdown-Message-Nav-Right==================
+    var showAndHideDropdownMessage = false;
+    $('.Menu-Messenger').click(() => {
+        $('.Main-Dropdown-Menu-Nav-Right').css('display', 'none');
+        if(showAndHideDropdownMessage == false){
+            $('.Dropdown-Message-Nav-Right').css('display', 'block');
+            showAndHideDropdownMessage = true;
+
+        }else{
+            $('.Dropdown-Message-Nav-Right').css('display', 'none');
+            showAndHideDropdownMessage = false;
+
+            // Click event to icon
+            $('.flex-medium-nav svg path').attr('fill', '#606266');
+            $('.flex-right-nav li svg path').attr('fill', '#050505');
+        }
+    });
+
+
+    // =====================End Main-Dropdown-Message-Nav-Right==================
 });
 // =====================end nav right=====================

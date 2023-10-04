@@ -10,6 +10,7 @@
     --bg-white-nav: #D8DADF;
     --bg-nav: #FFFFFF;
     --bg-nav-right-click: #bad8f2;
+    --bg-active-online: #31A24C;
 }
 
 body {
@@ -398,7 +399,6 @@ li .nav-main-search input {
     opacity: 1;
 }
 
-
 /* ==============YourProfile icon=============== */
 .YourProfile-Main-Nav-Right:hover::before {
     content: attr(aria-label-right-5);
@@ -419,6 +419,7 @@ li .nav-main-search input {
     visibility: visible;
     opacity: 1;
 }
+
 
 
 /* ==================DropDown List Menu Nav Right================= */
@@ -910,7 +911,182 @@ li .nav-main-search input {
     display: flex;
     align-items: center;
 }
-/* ================End Marketplace-listing List================== */
-
+/* ==================End Marketplace-listing List================== */
 /* ******************End DropDown List Menu Nav Right****************** */
+
+
+
+/* ==================Dropdown-Message-Nav-Right================== */
+.Dropdown-Message-Nav-Right{
+    position: absolute;
+    padding: 18px;
+    background: #F7F8FA;
+    right: 14px;
+    box-shadow: 0 1px 7px rgba(79, 79, 79, 0.3);
+}
+.Sub-Dropdown-Message-Nav-Right{
+    width: 350px;
+}
+.Main-header-Message{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.Sub-Main-All-Icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* ===========Main Options Icon============== */
+.Main-Options-Icon{
+    border-radius: 50%;
+    transition: background 0.2s;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.2s;
+    cursor: pointer;
+}
+.Main-Options-Icon:hover{
+    background: var(--bg-white-nav);
+}
+/* ===========End Main Options Icon============== */
+
+/* ===========Main See all Message Icon============== */
+.Main-See-all-Message a{
+    border-radius: 50%;
+    transition: background 0.2s;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.2s;
+    cursor: pointer;
+}
+.Main-See-all-Message:hover a{
+    background: var(--bg-white-nav);
+}
+/* ===========End See all Message Icon============== */
+
+/* ===========Main New Message Icon============== */
+.Main-New-Message a{
+    border-radius: 50%;
+    transition: background 0.2s;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.2s;
+    cursor: pointer;
+}
+.Main-New-Message:hover a{
+    background: var(--bg-white-nav);
+}
+/* ===========End New Message Icon============== */
+
+
+/* ===========Search Message============== */
+.Main-Chart-Message{
+    margin-top: 10px;
+}
+.Main-Chart-search{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    padding-left: 15px;
+    background: var(--color-nav-hover);
+    border-radius: 40px;
+}
+.Main-Chart-search i{
+    color: #606266;
+}
+.Main-Chart-search input{
+    border: none;
+    outline: none;
+    background: var(--color-nav-hover);
+    border-radius: 40px;
+    padding: 7px;
+    width: 93%;
+}
+
+/* Chart */
+.Main-Chart-Message-User{
+    margin-top: 20px;
+}
+.Chart-Information{
+    display: flex;
+    padding: 10px;
+    border-radius: 5px;
+    align-items: center;
+    transition: background 0.2s;
+    cursor: pointer;
+}
+.Chart-Information:hover{
+    background: var(--color-nav-hover);
+}
+/* .Chart-Information:hover .text-Options{
+    background: var(--bg-nav);
+    outline: 1px solid #e8e9ea;
+} */
+.Main-Chart-Message-User .img-user img{
+    width: 50px;
+}
+.user-active{
+    position: absolute;
+    width: 13px;
+    height: 13px;
+    background: var(--bg-active-online);
+    border-radius: 50%;
+    bottom: 40px;
+    left: 64px;
+    outline: #F2F2F2 2px solid;
+}
+/* ====================================== */
+
+.text-user{
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.text-user h6{
+    position: relative;
+    top: 5px;
+}
+.text-user p{
+    position: relative;
+    font-size: 14px;
+    /* bottom: 10px; */
+}
+.text-Options{
+    border-radius: 50%;
+    transition: background 0.2s;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+#chartInformation:hover:not(#text-Options){
+    background: var(--color-nav-hover);
+}
+#text-Options:hover:not(#chartInformation) {
+    background: var(--bg-nav);
+}
+
+
+
+
+
+/* ===========End Message============== */
+
+/* ******************End Dropdown-Message-Nav-Right****************** */
 /* ******************End Right Navbar****************** */
