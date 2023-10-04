@@ -1,0 +1,916 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --btn-width-100: 100px;
+    --color-nav-icon: #606266;
+    --color-nav-hover: #F2F2F2;
+    --color-nav-click: #0866FF;
+    --bg-white-nav: #D8DADF;
+    --bg-nav: #FFFFFF;
+    --bg-nav-right-click: #bad8f2;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul {
+    margin: 0;
+    padding: 8px 15px;
+    list-style: none;
+    display: flex;
+    box-shadow: 0 1px 7px rgba(79, 79, 79, 0.3);
+    display: flex;
+    justify-content: space-between;
+    background: var(--bg-nav);
+    width: 100%;
+}
+
+nav ul li #fb {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+}
+
+nav ul li #fb img {
+    width: 150px;
+}
+
+/* =============================Left Navbar======================= */
+.flex-left-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.flex-left-nav li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-left-nav li .nav-main-search {
+    display: flex;
+    background: var(--color-nav-hover);
+    justify-content: center;
+    align-items: center;
+    padding-left: 15px;
+    border-radius: 40px;
+
+}
+
+li .nav-main-search input {
+    border: none;
+    outline: none;
+    padding: 10px;
+    background-color: var(--color-nav-hover);
+    border-radius: 40px;
+
+}
+
+.nav-main-search-icon i {
+    color: #606266;
+}
+
+/* ==================Responsive Left================== */
+@media screen and (max-width: 450px) {
+    #nav-main-search-input {
+        display: none;
+    }
+
+    .nav-main-search-icon {
+        border-radius: 50%;
+        transition: background 0.2s;
+        width: 40px;
+        height: 40px;
+        background: var(--bg-white-nav);
+        transition: background 0.2s;
+        cursor: pointer;
+    }
+
+    .nav-main-search-icon i {
+        margin-top: 13px;
+        margin-left: 13px;
+    }
+
+    .flex-left-nav li .nav-main-search {
+        padding-left: 0px;
+    }
+
+    .nav-main-search-icon {
+        background: #D8DADF;
+    }
+
+}
+
+/* =============================End Left Navbar======================= */
+
+
+/* ==========================Medium Navbar======================= */
+.flex-medium-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.flex-medium-nav li {
+    padding: 10px 40px 10px 40px;
+    border-radius: 5px;
+    transition: background 0.2s;
+    cursor: pointer;
+}
+
+.flex-medium-nav li:hover {
+    background: var(--color-nav-hover);
+}
+
+.Main-More {
+    display: none;
+}
+
+/* ======================Home icon===================== */
+.Home-Main-Nav-Medium:hover::before {
+    content: attr(aria-label-medium-1);
+    position: absolute;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 5px 10px 5px 10px;
+    border-radius: 5px;
+    margin-top: 45px;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 1s, opacity 1s ease;
+    margin-left: -1rem;
+    font-size: 14px;
+}
+
+.Home-Main-Nav-Medium:hover::before {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* ======================Friends icon===================== */
+.Friends-Main-Nav-Medium:hover::before {
+    content: attr(aria-label-medium-2);
+    position: absolute;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 5px 10px 5px 10px;
+    border-radius: 5px;
+    margin-top: 45px;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 1s, opacity 1s ease;
+    margin-left: -1.3rem;
+    font-size: 14px;
+}
+
+.Friends-Main-Nav-Medium:hover::before {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* ======================Groups icon===================== */
+.Groups-Main-Nav-Medium:hover::before {
+    content: attr(aria-label-medium-3);
+    position: absolute;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 5px 10px 5px 10px;
+    border-radius: 5px;
+    margin-top: 45px;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 1s, opacity 1s ease;
+    margin-left: -1.2rem;
+    font-size: 14px;
+}
+
+.Groups-Main-Nav-Medium:hover::before {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* ======================More icon===================== */
+.More-Main-Nav-Medium:hover::before {
+    content: attr(aria-label-medium-4);
+    position: absolute;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 5px 10px 5px 10px;
+    border-radius: 5px;
+    margin-top: 45px;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 1s, opacity 1s ease;
+    margin-left: -0.9rem;
+    font-size: 14px;
+}
+
+.More-Main-Nav-Medium:hover::before {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* =======================Responsive CSS ================= */
+@media screen and (max-width: 1224px) {
+    .Main-More {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    .flex-medium-nav {
+        display: none;
+    }
+
+    .flex-right-nav {
+        display: flex;
+        gap: 0.4rem;
+    }
+
+    .Main-More {
+        display: block;
+    }
+}
+
+/* ==========================End Medium Navbar======================= */
+
+
+/* =====================Right Navbar====================== */
+.flex-right-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.flex-right-nav li {
+    border-radius: 50%;
+    transition: background 0.2s;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--bg-white-nav);
+    transition: background 0.2s;
+    cursor: pointer;
+}
+
+.flex-right-nav li:hover {
+    background: #e7e9ef;
+}
+
+.flex-right-nav li.selected {
+    color: #0866FF;
+    /* Change this to your default background color */
+}
+
+@media screen and (max-width: 500px) {
+    .flex-right-nav {
+        display: flex;
+        gap: 0.4rem;
+    }
+
+    .Menu-Main {
+        display: none !important;
+    }
+}
+
+/* ======================Create icon===================== */
+.Create-Main-Nav-Right svg {
+    position: relative;
+    bottom: 1px;
+}
+
+.Create-Main-Nav-Right:hover::before {
+    content: attr(aria-label-right-1);
+    position: absolute;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 5px 10px 5px 10px;
+    border-radius: 5px;
+    margin-top: 45px;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 1s, opacity 1s ease;
+    margin-left: -1.1rem;
+    font-size: 14px;
+}
+
+.Create-Main-Nav-Right:hover::before {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* ===================Menu icon==================== */
+.Menu-Main-Nav-Right svg {
+    position: relative;
+    bottom: 1.7px;
+}
+
+.Menu-Main-Nav-Right:hover::before {
+    content: attr(aria-label-right-2);
+    position: absolute;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 5px 10px 5px 10px;
+    border-radius: 5px;
+    margin-top: 45px;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 1s, opacity 1s ease;
+    margin-left: -1.1rem;
+    font-size: 14px;
+}
+
+.Menu-Main-Nav-Right:hover::before {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* ================Messenger icon================ */
+.Messenger-Main-Nav-Right svg {
+    position: relative;
+    bottom: 1.7px;
+}
+
+.Messenger-Main-Nav-Right:hover::before {
+    content: attr(aria-label-right-3);
+    position: absolute;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    border-radius: 5px;
+    padding: 5px 10px 5px 10px;
+    margin-top: 45px;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 1s, opacity 1s ease;
+    margin-left: -2rem;
+    font-size: 14px;
+}
+
+.Messenger-Main-Nav-Right:hover::before {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/* ==============Notification icon=============== */
+.Notifications-Main-Nav-Right svg {
+    position: relative;
+    bottom: 1.7px;
+}
+
+.Notifications-Main-Nav-Right:hover::before {
+    content: attr(aria-label-right-4);
+    position: absolute;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 5px 10px 5px 10px;
+    border-radius: 5px;
+    margin-top: 45px;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 1s, opacity 1s ease;
+    margin-left: -2.5rem;
+    font-size: 14px;
+}
+
+.Notifications-Main-Nav-Right:hover::before {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/* ==============YourProfile icon=============== */
+.YourProfile-Main-Nav-Right:hover::before {
+    content: attr(aria-label-right-5);
+    position: absolute;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 5px 10px 5px 10px;
+    border-radius: 5px;
+    margin-top: 52px;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 1s, opacity 1s ease;
+    margin-left: -1.4rem;
+    font-size: 14px;
+}
+
+.YourProfile-Main-Nav-Right:hover::before {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/* ==================DropDown List Menu Nav Right================= */
+.Main-Dropdown-Menu-Nav-Right {
+    position: absolute;
+    padding: 18px;
+    background: #F7F8FA;
+    right: 14px;
+    box-shadow: 0 1px 7px rgba(79, 79, 79, 0.3);
+}
+
+.Second-Dropdown-Menu-Nav-Right {
+    display: flex;
+    gap: 1rem;
+}
+
+.Menu-Nav-Left {
+    background: var(--bg-nav);
+    box-shadow: 0 1px 2px rgba(79, 79, 79, 0.3);
+    padding: 10px;
+    border-radius: 5px;
+    width: 400px;
+    overflow: hidden;
+    height: 77vh;
+    transition: overflow 0.5s;
+}
+
+.Menu-Nav-Left:hover {
+    overflow-y: scroll;
+}
+
+.Menu-Nav-Left::-webkit-scrollbar {
+    width: 10px;
+}
+
+.Menu-Nav-Left::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 6px;
+}
+
+.Menu-Nav-Left::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 6px;
+    border: 3px solid #f1f1f1;
+}
+
+/* ==================Social input search================== */
+.Menu-Search-First {
+    background: var(--color-nav-hover);
+    border-radius: 40px;
+    padding-left: 13px;
+    margin-top: 5px;
+}
+
+.Menu-Search-First input {
+    border: none;
+    outline: none;
+    background: var(--color-nav-hover);
+    border-radius: 40px;
+    padding: 7px;
+    width: 93%;
+}
+
+/* ==================End Social input search================== */
+
+/* ================Menu List================== */
+.Social-List {
+    display: flex;
+    /* align-items: center; */
+    padding: 5px;
+    border-radius: 5px;
+    transition: background 0.3s;
+    cursor: pointer;
+}
+
+.Social-List:hover {
+    background: var(--color-nav-hover);
+}
+
+.Social-List .Social-List-Text {
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.Social-List-Text span {
+    position: relative;
+    bottom: 6px;
+    font-size: 13px;
+}
+
+/* ================Menu List================== */
+
+/* ================Entertainment List================== */
+.Entertainment-List {
+    display: flex;
+    padding: 5px;
+    border-radius: 5px;
+    transition: background 0.3s;
+    cursor: pointer;
+}
+
+.Entertainment-List:hover {
+    background: var(--color-nav-hover);
+}
+
+.Entertainment-List .Entertainment-List-Text {
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.Entertainment-List-Text span {
+    position: relative;
+    bottom: 6px;
+    font-size: 13px;
+}
+
+/* ================End Entertainment List================== */
+
+/* ================Shopping List================== */
+.Shopping-List {
+    display: flex;
+    padding: 5px;
+    border-radius: 5px;
+    transition: background 0.3s;
+    cursor: pointer;
+}
+
+.Shopping-List:hover {
+    background: var(--color-nav-hover);
+}
+
+.Shopping-List .Shopping-List-Text {
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.Shopping-List-Text span {
+    position: relative;
+    bottom: 6px;
+    font-size: 13px;
+}
+
+/* ================End Shopping List================== */
+
+/* ================Personal List================== */
+.Personal-List {
+    display: flex;
+    padding: 5px;
+    border-radius: 5px;
+    transition: background 0.3s;
+    cursor: pointer;
+}
+
+.Personal-List:hover {
+    background: var(--color-nav-hover);
+}
+
+.Personal-List .Personal-List-Text {
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.Personal-List-Text span {
+    position: relative;
+    bottom: 6px;
+    font-size: 13px;
+}
+
+/* ================End Personal List================== */
+
+/* ================Professional List================== */
+.Professional-List {
+    display: flex;
+    padding: 5px;
+    border-radius: 5px;
+    transition: background 0.3s;
+    cursor: pointer;
+}
+
+.Professional-List:hover {
+    background: var(--color-nav-hover);
+}
+
+.Professional-List .Professional-List-Text {
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.Professional-List-Text span {
+    position: relative;
+    bottom: 6px;
+    font-size: 13px;
+}
+
+/* ================End Professional List================== */
+
+/* ================Community Resources List================== */
+.Community-Resources-List {
+    display: flex;
+    padding: 5px;
+    border-radius: 5px;
+    transition: background 0.3s;
+    cursor: pointer;
+}
+
+.Community-Resources-List:hover {
+    background: var(--color-nav-hover);
+}
+
+.Community-Resources-List .Community-Resources-List-Text {
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    /* background: #ff5454; */
+}
+
+.Community-Resources-List-Text span {
+    position: relative;
+    bottom: 6px;
+    font-size: 13px;
+}
+
+/* ================End Community Resources List================== */
+/* ******************End DropDown List Menu Nav left****************** */
+
+/* ==================DropDown List Menu Nav Right================= */
+.Menu-Nav-Right {
+    background: var(--bg-nav);
+    box-shadow: 0 1px 2px rgba(79, 79, 79, 0.3);
+    padding: 10px;
+    border-radius: 5px;
+    width: 250px;
+    height: 75vh;
+}
+
+/* ================Post List================== */
+.Post-List {
+    display: flex;
+    padding: 8px;
+    border-radius: 5px;
+    transition: background 0.3s;
+    cursor: pointer;
+}
+.Post-List:hover {
+    background: var(--color-nav-hover);
+}
+.Post-List-Img {
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+    background: var(--bg-white-nav);
+    padding: 8px;
+}
+.Post-List .Post-List-Text {
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+}
+
+/* ================End Post List================== */
+
+/* ================Story List================== */
+.Story-List {
+    display: flex;
+    padding: 8px;
+    border-radius: 5px;
+    transition: background 0.3s;
+    cursor: pointer;
+}
+.Story-List:hover {
+    background: var(--color-nav-hover);
+}
+.Story-List-Img {
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+    background: var(--bg-white-nav);
+    padding: 8px;
+}
+.Story-List .Story-List-Text {
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+}
+
+/* ================End Story List================== */
+
+/* ================Reel List================== */
+.Reel-List {
+    display: flex;
+    padding: 8px;
+    border-radius: 5px;
+    transition: background 0.3s;
+    cursor: pointer;
+}
+.Reel-List:hover {
+    background: var(--color-nav-hover);
+}
+.Reel-List-Img {
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+    background: var(--bg-white-nav);
+    padding: 8px;
+}
+.Reel-List .Reel-List-Text {
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+}
+
+/* ================End Reel List================== */
+
+/* ================Life-event List================== */
+.Life-event-List {
+    display: flex;
+    padding: 8px;
+    border-radius: 5px;
+    transition: background 0.3s;
+    cursor: pointer;
+}
+.Life-event-List:hover {
+    background: var(--color-nav-hover);
+}
+.Life-event-List-Img {
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+    background: var(--bg-white-nav);
+    padding: 8px;
+}
+.Life-event-List .Life-event-List-Text {
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+}
+/* ================End Life-event List================== */
+
+/* ================Page List================== */
+.Page-List {
+    display: flex;
+    padding: 8px;
+    border-radius: 5px;
+    transition: background 0.3s;
+    cursor: pointer;
+}
+.Page-List:hover {
+    background: var(--color-nav-hover);
+}
+.Page-List-Img {
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+    background: var(--bg-white-nav);
+    padding: 8px;
+}
+.Page-List .Page-List-Text {
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+}
+/* ================End Page List================== */
+
+/* ================Ad List================== */
+.Ad-List {
+    display: flex;
+    padding: 8px;
+    border-radius: 5px;
+    transition: background 0.3s;
+    cursor: pointer;
+}
+.Ad-List:hover {
+    background: var(--color-nav-hover);
+}
+.Ad-List-Img {
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+    background: var(--bg-white-nav);
+    padding: 8px;
+}
+.Ad-List .Ad-List-Text {
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+}
+/* ================End Ad List================== */
+
+/* ================Group List================== */
+.Group-List {
+    display: flex;
+    padding: 8px;
+    border-radius: 5px;
+    transition: background 0.3s;
+    cursor: pointer;
+}
+.Group-List:hover {
+    background: var(--color-nav-hover);
+}
+.Group-List-Img {
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+    background: var(--bg-white-nav);
+    padding: 8px;
+}
+.Group-List .Group-List-Text {
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+}
+/* ================End Group List================== */
+
+/* ================Event List================== */
+.Event-List {
+    display: flex;
+    padding: 8px;
+    border-radius: 5px;
+    transition: background 0.3s;
+    cursor: pointer;
+}
+.Event-List:hover {
+    background: var(--color-nav-hover);
+}
+.Event-List-Img {
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+    background: var(--bg-white-nav);
+    padding: 8px;
+}
+.Event-List .Event-List-Text {
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+}
+/* ================End Event List================== */
+
+/* ================Event List================== */
+.Event-List {
+    display: flex;
+    padding: 8px;
+    border-radius: 5px;
+    transition: background 0.3s;
+    cursor: pointer;
+}
+.Event-List:hover {
+    background: var(--color-nav-hover);
+}
+.Event-List-Img {
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+    background: var(--bg-white-nav);
+    padding: 8px;
+}
+.Event-List .Event-List-Text {
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+}
+/* ================End Event List================== */
+
+/* ================Marketplace-listing List================== */
+.Marketplace-listing-List {
+    display: flex;
+    padding: 8px;
+    border-radius: 5px;
+    transition: background 0.3s;
+    cursor: pointer;
+}
+.Marketplace-listing-List:hover {
+    background: var(--color-nav-hover);
+}
+.Marketplace-listing-List-Img {
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+    background: var(--bg-white-nav);
+    padding: 8px;
+}
+.Marketplace-listing-List .Marketplace-listing-List-Text {
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+}
+/* ================End Marketplace-listing List================== */
+
+/* ******************End DropDown List Menu Nav Right****************** */
+/* ******************End Right Navbar****************** */

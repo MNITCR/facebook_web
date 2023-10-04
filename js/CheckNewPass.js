@@ -9,9 +9,9 @@ $(document).ready(function() {
     });
 
     // Toggle password visibility
-    // $('#togglePasswordRegister1').click(function() {
-    //   togglePasswordVisibility(newPasswordInput);
-    // });
+    $('#togglePasswordRegister1').click(function() {
+      togglePasswordVisibility(newPasswordInput);
+    });
 
     // Confirm password
     var ConfirmNewPassword = $('#ConfirmNewPassword');
@@ -22,9 +22,9 @@ $(document).ready(function() {
     });
 
     // Toggle confirm password visibility
-    // $('#togglePasswordRegister2').click(function() {
-    //   togglePasswordVisibility(ConfirmNewPassword);
-    // });
+    $('#togglePasswordRegister2').click(function() {
+      togglePasswordVisibility(ConfirmNewPassword);
+    });
 
     // Update Password Submit
     $('#UpdatePasswordSubmit').click(function(e) {
@@ -94,15 +94,15 @@ $(document).ready(function() {
     }
 
     // Function to toggle password visibility
-    // function togglePasswordVisibility(input) {
-    //   const eyeIcon = input.next('button').find('i');
+    function togglePasswordVisibility(input) {
+      const eyeIcon = input.next('button').find('i');
 
-    //   if (input.prop('type') === 'password') {
-    //     input.prop('type', 'text');
-    //     eyeIcon.removeClass('fa-eye-slash').addClass('fa-eye');
-    //   } else {
-    //     input.prop('type', 'password');
-    //     eyeIcon.removeClass('fa-eye').addClass('fa-eye-slash');
-    //   }
-    // }
+      if (input.prop('type') === 'password') {
+        input.prop('type', 'text');
+        eyeIcon.removeClass('fa-eye-slash').addClass('fa-eye');
+      } else {
+        input.prop('type', 'password');
+        eyeIcon.removeClass('fa-eye').addClass('fa-eye-slash');
+      }
+    }
   });

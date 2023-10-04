@@ -1,7 +1,7 @@
 $(document).ready(function() {
     // Variable to store the selected user details
     var selectedUser = {};
-    var userData; // Declare userData here
+    var userData;
 
     // Add click event for the "Search" button
     $('#searchUser').click(function(e) {
@@ -332,35 +332,6 @@ $(document).ready(function() {
 
 
     // ContinueEnterSecurityCode
-    $('#togglePasswordRegister1').click(function () {
-        const InputNewPassword1 = $('#newPassword');
-        const eyeIconRegister1 = $('#togglePasswordRegister1 i');
-
-        if (InputNewPassword1.prop('type') === 'password') {
-          InputNewPassword1.prop('type', 'text');
-          eyeIconRegister1.removeClass('fa-eye-slash').addClass('fa-eye');
-        } else {
-          InputNewPassword1.prop('type', 'password');
-          eyeIconRegister1.removeClass('fa-eye').addClass('fa-eye-slash');
-        }
-    });
-
-
-    $('#togglePasswordRegister2').click(function () {
-        const InputNewPassword2 = $('#ConfirmNewPassword');
-        const eyeIconRegister2 = $('#togglePasswordRegister2 i');
-
-        if (InputNewPassword2.prop('type') === 'password') {
-          InputNewPassword2.prop('type', 'text');
-          eyeIconRegister2.removeClass('fa-eye-slash').addClass('fa-eye');
-        } else {
-          InputNewPassword2.prop('type', 'password');
-          eyeIconRegister2.removeClass('fa-eye').addClass('fa-eye-slash');
-        }
-    });
-
-
-
     $('#ContinueEnterSecurityCode').click(function (event) {
         event.preventDefault();
         var OTPFromRestEmail = $('#OTPFromRestEmail').val();
