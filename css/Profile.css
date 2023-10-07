@@ -55,7 +55,7 @@ section.Main-profile-user{
     bottom: 1.2rem;;
 }
 .main-Pro-Img-user-upload-photo{
-    z-index: 9999;
+    z-index: 9;
     background: var(--color-nav-icon);
     display: flex;
     gap: 0.5rem;
@@ -172,4 +172,182 @@ section.Main-profile-user{
 .content-on-profile .group-btn:hover{
     background: #cbcdd3;
 }
+
+
+/* Main-sub-content-on-profile */
+.sub-content-on-profile-data{
+    background: #F0F2F5;
+    width: 100%;
+    position: relative;
+    bottom: 60px;
+}
+.Main-user-user-Info{
+    position: relative;
+    bottom: 4.5rem;
+    width: 66.8%;
+    margin: auto;
+    /* background: red; */
+}
+.Main-sub-content-on-profile{
+    position: relative;
+    width: 66.8%;
+    margin: auto;
+}
+.Main-sub-content-on-profile-1{
+    padding-top: 18px;
+    /* padding-bottom: 18px; */
+    display: flex;
+    gap: 1rem;
+}
+
+/* on-profile-left */
+.on-profile-left{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 50%;
+}
+
+/* Intro */
+.sub-content-on-profile-Intro{
+    background: var(--bg-nav);
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border-radius: 7px;
+}
+.sub-content-on-profile-Intro .group-intro{
+    font-weight: 600;
+    background: var(--bg-white-nav);
+    padding: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    transition: background 0.2s;
+    cursor: pointer;
+}
+.sub-content-on-profile-Intro .group-intro:hover{
+    background: #cbcdd3;
+}
+
+/* Photos */
+.sub-content-on-profile-Photos{
+    background: var(--bg-nav);
+    padding: 18px;
+    border-radius: 7px;
+}
+
+/* Friend */
+.sub-content-on-profile-Friends{
+    background: var(--bg-nav);
+    padding: 18px;
+    border-radius: 7px;
+}
+
+
+
+/* on-profile-right */
+.on-profile-right{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 70%;
+}
+
+/* createPost */
+.sub-content-on-profile-createPost{
+    background: var(--bg-nav);
+    padding: 18px 18px 8px 18px;
+    border-radius: 7px;
+}
+.sub-content-on-profile-createPost-1 .group-Post{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 7px 26.8px 7px 26.8px;
+    transition: background 0.3s;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.sub-content-on-profile-createPost-1 .group-Post:hover{
+    background: #cbcdd3;
+}
+
+/* Setting-Posts */
+.sub-content-on-profile-Setting-Posts{
+    background: var(--bg-nav);
+    padding: 18px 18px 0px 18px;
+    border-radius: 7px;
+}
+.sub-content-on-profile-Setting-Posts .Setting-Posts{
+    display: flex;
+    align-items: center;
+    background: var(--bg-white-nav);
+    padding: 6px 15px 6px 15px;
+    border-radius: 5px;
+    gap: 0.4rem;
+    transition: background 0.3s;
+    cursor: pointer;
+}
+.sub-content-on-profile-Setting-Posts .Setting-Posts:hover{
+    background: #cbcdd3;
+}
+.sub-content-on-profile-Setting-Posts .Setting_Post_on_hr{
+    display: flex;
+    position: relative;
+    bottom: 7px;
+    justify-content: space-around;
+    gap: 1rem;
+}
+.sub-content-on-profile-Setting-Posts .Setting_Post_on_hr-group{
+    padding: 6px 88px 6px 88px;
+    display: flex;
+    gap: 0.4rem;
+    border-radius: 5px;
+    transition: background 0.3s;
+    cursor: pointer;
+}
+.sub-content-on-profile-Setting-Posts .Setting_Post_on_hr-group:hover{
+    background: var(--bg-white-nav);
+}
+
+
+/* All Post */
+.sub-content-on-profile-All-Posts{
+    background: var(--bg-nav);
+    padding: 18px 18px 8px 18px;
+    border-radius: 7px;
+}
+.name_detail{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding-left: 10px;
+    align-items: center;
+}
+.name_detail_left{
+    position: relative;
+}
+.name_detail_left span{
+    font-size: 13px;
+    bottom: 10px;
+    position: relative;
+}
+.name_detail_right .name_detail_right-btn{
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.3s;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+.name_detail_right .name_detail_right-btn:hover{
+    background: var(--bg-white-nav);
+}
+/* End Main-sub-content-on-profile */
 /* *****************End Main-profile-user****************** */
