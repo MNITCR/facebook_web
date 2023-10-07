@@ -1081,12 +1081,140 @@ li .nav-main-search input {
 #text-Options:hover:not(#chartInformation) {
     background: var(--bg-nav);
 }
-
-
-
-
-
 /* ===========End Message============== */
-
 /* ******************End Dropdown-Message-Nav-Right****************** */
+
+
+
+/* ==================Dropdown-Notifications-Nav-Right================== */
+.Dropdown-notifications-Nav-Right{
+    position: absolute;
+    padding: 18px;
+    background: #F7F8FA;
+    right: 14px;
+    box-shadow: 0 1px 7px rgba(79, 79, 79, 0.3);
+}
+.Sub-Dropdown-notifications-Nav-Right{
+    width: 350px;
+}
+.Main-header-notifications{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.Sub-Main-All-Icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.notifications-Information .img-notifications img{
+    width: 50px;
+}
+.notifications-active{
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    font-size: 10px;
+    background: #1185E4;
+    border-radius: 50%;
+    bottom: 35px;
+    left: 60px;
+    outline: #F2F2F2 2px solid;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.notifications-Information{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: 5px;
+    cursor: pointer;
+}
+.notifications-Information:hover{
+    background: var(--color-nav-hover);
+}
+.notifications-user{
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.notifications-user h6{
+    position: relative;
+    top: 5px;
+}
+.notifications-user p{
+    position: relative;
+    font-size: 14px;
+    /* bottom: 10px; */
+}
+.notifications-Options{
+    border-radius: 50%;
+    transition: background 0.2s;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+#chartInformation:hover:not(#notifications-Options){
+    background: var(--color-nav-hover);
+}
+#notifications-Options:hover:not(#chartInformation) {
+    background: var(--bg-nav);
+}
+/* ******************End Dropdown-Notifications-Nav-Right****************** */
+
+
+
+/* ==================Dropdown-Profile-Nav-Right================== */
+.Dropdown-Profile-Nav-Right{
+    position: absolute;
+    padding: 18px;
+    background: #F7F8FA;
+    right: 14px;
+    box-shadow: 0 1px 7px rgba(79, 79, 79, 0.3);
+}
+.Sub-Dropdown-Profile-Nav-Right{
+    width: 350px;
+}
+.profile-Nav-Right {
+    background: var(--bg-nav);
+    box-shadow: 0 1px 2px rgba(79, 79, 79, 0.3);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* profile footer */
+.profile-footer{
+    margin-top: 10px;
+    /* background-color: #31A24C; */
+}
+.profile-footer footer ul{
+    position: relative;
+    list-style: none;
+    display: flex;
+    overflow: hidden;
+    flex-wrap: wrap;
+    gap: 0.1rem;
+    right: 20px;
+}
+.profile-footer footer ul li{
+    display: flex;
+    font-size: 13px;
+    color: #606266;
+}
+.profile-footer footer ul li a{
+    text-decoration: none;
+    display: flex;
+    font-size: 13px;
+    color: #606266;
+}
+/* ******************End Dropdown-Profile-Nav-Right****************** */
 /* ******************End Right Navbar****************** */

@@ -1,0 +1,175 @@
+:root {
+    --btn-width-100: 100px;
+    --color-nav-icon: #606266;
+    --color-nav-hover: #F2F2F2;
+    --color-nav-click: #0866FF;
+    --bg-white-nav: #D8DADF;
+    --bg-nav: #FFFFFF;
+    --bg-nav-right-click: #bad8f2;
+    --bg-active-online: #31A24C;
+}
+/* =================Main-profile-user================== */
+section.Main-profile-user{
+
+}
+.Main-user-user-1{
+    position: relative;
+    /* background: #000; */
+}
+.Main-user-user-Img{
+    width: 71%;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgb(240, 242, 245) 60%,rgb(147, 148, 150) 150%);
+    margin: auto;
+    position: relative;
+    border-radius: 0px 0 8px 8px;
+
+}
+.main-Pro-Img-user{
+    /* background: #000; */
+    min-width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+.main-Pro-Img-user img{
+    min-width: 100%;
+    min-height: 400px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    border-radius: 0 0 8px 8px;
+}
+
+.main-Pro-Img-user-upload{
+    position: absolute;
+    right: 2rem;
+    display: flex;
+    gap: 0.5rem;
+    flex-direction: column;
+    bottom: 1.2rem;;
+}
+.main-Pro-Img-user-upload-photo{
+    z-index: 9999;
+    background: var(--color-nav-icon);
+    display: flex;
+    gap: 0.5rem;
+    padding: 8px;
+    align-items: center;
+    border-radius: 5px;
+    color: var(--bg-nav) !important;
+    transition: background 0.5s;
+    cursor: pointer;
+}
+.main-Pro-Img-user-upload-photo:hover{
+    background: #767a82;
+}
+.main-Pro-Img-user-upload-photo-1 i {
+    color: white !important;
+}
+.main-Pro-Img-user-upload-photo span{
+    font-weight: bold;
+}
+
+
+/* Main-user-user-Info */
+
+.Main-user-user-Info{
+    position: relative;
+    bottom: 4.5rem;
+    width: 66.8%;
+    margin: auto;
+    /* background: red; */
+}
+.Profile-user{
+    position: relative;
+    border-radius: 50%;
+    width: 170px;
+    height: 170px;
+    background-color: #31A24C;
+    outline: #FFFFFF 3px solid;
+}
+.Profile-user-upload-1 i{
+    position: absolute;
+    padding: 8px;
+    background-color: var(--bg-white-nav);
+    border-radius: 50%;
+    bottom: 0.5rem;
+    left: 7.8rem;
+    cursor: pointer;
+    font-size: 18px;
+}
+.Profile-user img{
+    width: 170px;
+    height: 170px;
+}
+
+.Main-user-user-Info-content{
+    display: flex;
+    margin-top: 6rem;
+    justify-content: space-between;
+    width: 100%;
+    padding-left: 15px;
+    /* padding-right: 15px; */
+}
+.Main-user-user-Info-content .btn_3{
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+}
+.btn_3 .group-btn{
+    padding: 6px 20px 6px 20px;
+    background-color: #0861F2;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.btn_3 .group-btn:hover{
+    background: #136cfb;
+}
+.btn_3 .group-btn#bg_white{
+    background-color: var(--bg-white-nav);
+    font-weight: 600;
+    transition: background 0.3s;
+}
+.btn_3 .group-btn#bg_white:hover{
+    background: #cbcdd3;
+}
+
+/* ==============on profile=============== */
+.content-on-profile .group-btn{
+    padding: 9px;
+    background-color: var(--bg-white-nav);
+    cursor: pointer;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.3s;
+}
+.content-on-profile-text{
+    display: flex;
+    /* gap: 1.5rem; */
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-nav-icon);
+}
+.content-on-profile-text span{
+    cursor: pointer;
+    padding: 8px 20px 8px 20px;
+    transition: background 0.3s;
+    border-radius: 5px;
+}
+.content-on-profile-text span:hover{
+    background: #f0f0f0;
+}
+.content-on-profile .group-btn:hover{
+    background: #cbcdd3;
+}
+/* *****************End Main-profile-user****************** */
