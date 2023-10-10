@@ -62,17 +62,27 @@
             $OTPMessage = 'The code otp not found!';
         }
         else {
-            // Your database connection and query for inserting user data
-            // include 'php/conn.php'; // Include your database connection
-
             $insertQuery = "INSERT INTO user_table (first_name, surname, mobileOrEmail, password, birthday_day, birthday_month, birthday_year, gender, created_at)
             VALUES ('$fname', '$surname', '$mobile', '$pass', '$birthday_day', '$birthday_month', '$birthday_year', '$gender', NOW())";
 
             if (mysqli_query($conn, $insertQuery)) {
-                // OTP sent successfully
-                $alertMessage = 'Register successfully';
-                // Redirect or display a success message
-                echo '<script>alert("' . $alertMessage . '"); window.location.href = "html/home/home.php";</script>';
+                // Retrieve the user data
+                $getUserQuery = "SELECT first_name,surname FROM user_table WHERE mobileOrEmail = '$mobile'";
+                $userResult = mysqli_query($conn, $getUserQuery);
+
+                if ($userResult && $userData = mysqli_fetch_assoc($userResult)) {
+                    $FName = $userData['first_name'];
+                    $LName = $userData['surname'];
+
+                    $FULL_Name = $FName + $LName;
+                    $FULLName = $_SESSION['FULL_Name'];
+                    // Redirect or display a success message with the user's name
+                    $alertMessage = "Register successfully. Welcome, ' . $FULLName . '!";'window.location.href = "html/home/home.php"';
+                } else {
+                    $alertMessage = "Error retrieving user data: " . mysqli_error($conn);
+                    // Handle the database error, show an alert, or return an error response
+                }
+                // $alertMessage = 'Register successfully';
             } else {
                 $alertMessage = "Error: " . mysqli_error($conn);
                 // Handle the database error, show an alert, or return an error response

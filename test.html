@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -25,6 +26,8 @@
     />
     <link rel="stylesheet" href="./css/home.css" />
     <link rel="stylesheet" href="./css/Profile.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/emojionearea/3.4.2/emojionearea.min.css"/>
   </head>
   <body>
     <!-- Navbar home page -->
@@ -1123,7 +1126,7 @@
             </div>
 
             <!-- Log Out -->
-            <div class="Marketplace-listing-List">
+            <div class="Marketplace-listing-List" id="logout-nav-right">
               <div class="Marketplace-listing-List-Img">
                 <i style="background-image: url(&quot;https://static.xx.fbcdn.net/rsrc.php/v3/yW/r/_h_2EMTtaHg.png?_nc_eui2=AeE0Sk07wLmTmgMKqwqOQY6-JI8JjooKsrokjwmOigqyujJ4BNQygh9zfLbgqp93ktuGDiCCS429xuMotBshl25p&quot;); background-position: 0px -224px; background-size: 42px 510px; width: 20px; height: 20px; background-repeat: no-repeat; display: inline-block;"></i>
               </div>
@@ -1245,7 +1248,7 @@
           </div>
 
 
-          <div class="Main-user-user-Info" style="position: relative;">
+          <div class="Main-user-user-Info">
             <div class="" style="display: flex;align-items: center;">
               <div class="Profile-user">
                 <div class="">
@@ -1262,7 +1265,7 @@
                 </div>
                 <div class="btn_3">
                   <div class="group-btn">
-                    <a href="#" style="text-decoration: none;font-weight: 600;color: #FFFFFF;">+ Add to story</a>
+                    <a href="#" style="text-decoration: none;font-weight: 600;color: #FFFFFF;"><i class="fa-solid fa-plus"></i> Add to story</a>
                   </div>
                   <div class="group-btn" id="bg_white">
                     <div><i class="fa-solid fa-pen"></i> &nbsp;Edit profile</div>
@@ -1459,7 +1462,7 @@
                         </div>
 
                         <!-- Photo/video -->
-                        <div class="group-Post">
+                        <div class="group-Post" id="VideoORImage">
                           <div class="">
                             <img
                               height="24"
@@ -1596,6 +1599,236 @@
                           </div>
                         </div>
                       </div>
+
+                      <!-- Main Social -->
+                      <div class="">
+                        <div class="" style="text-align: center;padding-bottom: 20px;">
+                          <div class="" style="display: flex;justify-content: center;align-items: center;">
+                            <div class="" style="width: 40px;height: 40px;border-radius: 50%;background: #0866FF;display: flex;align-items: center;justify-content: center;">
+                              <img height="20" width="20"
+                                src="https://static.xx.fbcdn.net/rsrc.php/v3/y-/r/3g9F3UOPitA.png?_nc_eui2=AeFro721FMChRF7M6JUPxwA0m1jvQ-j_dgSbWO9D6P92BMwul-CQdCmem6pODCEzWJGT1qV86zw5KhOvV7S3mCkc"
+                              />
+                            </div>
+                          </div>
+                          <div class="" style="margin-top: 10px;">
+                            <h5 style="font-weight: 400">Born on February 17, 2003</h5>
+                          </div>
+                        </div>
+
+                        <!-- Social -->
+                        <div class="">
+                          <h6><?php echo $_SESSION['FULL_Name']; ?></h6>
+                          <!-- <div class="hover_show_reach_select" style="display: flex;align-items: center;">
+
+                          </div> -->
+                        </div>
+                        <hr style ="
+                          display: block;
+                          margin-bottom: 0.2em;
+                          margin-left: auto;
+                          margin-right: auto;
+                          border-style: inset;
+                          border-width: 1px;
+                        "/>
+                        <div class="main-group-social">
+
+                          <!-- like -->
+                          <div class="group-social" id="hover_show_reach" style="position: relative;">
+                            <div class="hover_show_reach_select" style="display: flex;align-items: center;">
+                              <i style="
+                                background-image: url('https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/BBpOFqlaCQ6.png?_nc_eui2=AeEWzJMqwvFWV9CzCsMajqC6b1QDXe9Wg-BvVANd71aD4AdlPG4d6qP3DBdrU0wmxsEcofGCcHmT3ufI5mzXsK1_');
+                                background-position: 0px -352px;
+                                background-size: 22px 620px;
+                                width: 20px;
+                                height: 20px;
+                                background-repeat: no-repeat;
+                                display: inline-block;
+                              "></i>
+                            </div>
+                            <!-- Container for icons on hover -->
+                            <div class="icons-container">
+                              <!-- Like -->
+                              <img class="icon" alt="Like" src="./html/Icon6/like.png" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Like"/>
+                              <!-- Love -->
+                              <img class="icon" src="./html/Icon6/love.svg" alt="Love" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Love">
+                              <!-- Care -->
+                              <img class="icon" src="./html/Icon6/car.svg" alt="Care" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Care">
+                              <!-- Hasha -->
+                              <img class="icon" src="./html/Icon6/hasha.svg" alt="Hasha" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Hasha">
+                              <!-- Wow -->
+                              <img class="icon" src="./html/Icon6/wow.svg" alt="Wow" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Wow">
+                              <!-- Sad -->
+                              <img class="icon" src="./html/Icon6/sad.svg" alt="Sad" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Sad">
+                              <!-- Angry -->
+                              <img class="icon" src="./html/Icon6/angry.svg" alt="Angry" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Angry">
+                            </div>
+                            <div class="Main_selectedText" style="display: flex;align-items: center;">
+                              <h6 id="selectedText" style="position: relative;top: 4px;">Like</h6>
+                            </div>
+                          </div>
+
+                          <!-- Comment -->
+                          <div class="group-social">
+                            <div class="" style="display: flex;align-items: center;">
+                              <i style="
+                                background-image: url('https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/BBpOFqlaCQ6.png?_nc_eui2=AeEWzJMqwvFWV9CzCsMajqC6b1QDXe9Wg-BvVANd71aD4AdlPG4d6qP3DBdrU0wmxsEcofGCcHmT3ufI5mzXsK1_');
+                                background-position: 0px -176px;
+                                background-size: 22px 620px;
+                                width: 20px;
+                                height: 20px;
+                                background-repeat: no-repeat;
+                                display: inline-block;
+                                ">
+                              </i>
+                            </div>
+                            <div class="" style="display: flex;align-items: center;">
+                              <h6 style="position: relative;top: 3px;">Comment</h6>
+                            </div>
+                          </div>
+
+                          <!-- Share -->
+                          <div class="group-social">
+                            <div class="" style="display: flex;align-items: center;">
+                              <i style="
+                                background-image: url('https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/BBpOFqlaCQ6.png?_nc_eui2=AeEWzJMqwvFWV9CzCsMajqC6b1QDXe9Wg-BvVANd71aD4AdlPG4d6qP3DBdrU0wmxsEcofGCcHmT3ufI5mzXsK1_');
+                                background-position: 0px -462px;
+                                background-size: 22px 620px;
+                                width: 20px;
+                                height: 20px;
+                                background-repeat: no-repeat;
+                                display: inline-block;
+                                ">
+                              </i>
+                            </div>
+                            <div class="" style="display: flex;align-items: center;">
+                              <h6 style="position: relative;top: 2px;">Share</h6>
+                            </div>
+                          </div>
+                        </div>
+                        <hr style ="
+                          display: block;
+                          margin-left: auto;
+                          margin-top: 0.3em;
+                          margin-right: auto;
+                          border-style: inset;
+                          border-width: 1px;
+                        "/>
+                      </div>
+
+                      <!-- Comment on post -->
+                      <div class="main-comment-on-post">
+                        <div class="comment-on-post" style="display: flex;justify-content: space-between;">
+                          <div class="" style="position: relative;">
+                            <img
+                              src="./html/userImg/logoUser.png"
+                              alt=""
+                              width="33px"
+                              height="33px"
+                            />
+                            <div class="" style="position: absolute;top: 20px;left: 23px; border-radius: 50%;background: #dcdcdc;width: 12px;height: 12px;display: flex;align-items: center;justify-content: center;cursor: pointer;">
+                              <svg fill="currentColor" viewBox="0 0 16 16" width="1em" height="1em">
+                                <g fill-rule="evenodd" transform="translate(-448 -544)"><path fill-rule="nonzero" d="M452.707 549.293a1 1 0 0 0-1.414 1.414l4 4a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0-1.414-1.414L456 552.586l-3.293-3.293z"></path>
+                                </g>
+                              </svg>
+                            </div>
+                          </div>
+
+                          <!-- comment-on-post-2 -->
+                          <div class="comment-on-post-2">
+                            <div class="" style="width: 100%;top: 3px;position: relative;">
+                              <textarea name="" id="" cols="40" rows="1" style="width: 100%;" placeholder="Write a comment...."></textarea>
+                            </div>
+                            <div class="" style="display: flex;align-items: center;">
+                              <div title="Comment with an avatar sticker" class="comment-on-post-2-icon">
+                                <i
+                                  data-visualcompletion="css-img"
+                                  class="x1b0d499 x1d69dk1"
+                                  style="
+                                    background-image: url('https://static.xx.fbcdn.net/rsrc.php/v3/yg/r/OH3b5mzlwwA.png?_nc_eui2=AeHvXMJ-Kt8PbatNoMEYmDSly_fTt-nCLGnL99O36cIsaRbs5VY714eKI7GJX4zMThWXyRARwBbbnsqsCxToXPPi');
+                                    background-position: 0px -304px;
+                                    background-size: 26px 656px;
+                                    width: 16px;
+                                    height: 16px;
+                                    background-repeat: no-repeat;
+                                    display: inline-block;
+                                  ">
+                                </i>
+                              </div>
+
+                              <div title="Insert an emoji" class="comment-on-post-2-icon">
+                                <i
+                                  data-visualcompletion="css-img"
+                                  class="x1b0d499 x1d69dk1"
+                                  style="
+                                    background-image: url('https://static.xx.fbcdn.net/rsrc.php/v3/yg/r/OH3b5mzlwwA.png?_nc_eui2=AeHvXMJ-Kt8PbatNoMEYmDSly_fTt-nCLGnL99O36cIsaRbs5VY714eKI7GJX4zMThWXyRARwBbbnsqsCxToXPPi');
+                                    background-position: 0px -412px;
+                                    background-size: 26px 656px;
+                                    width: 16px;
+                                    height: 16px;
+                                    background-repeat: no-repeat;
+                                    display: inline-block;
+                                  ">
+                                </i>
+                              </div>
+
+                              <div title="Attach a photo or video" class="comment-on-post-2-icon">
+                                <i
+                                  style="
+                                    background-image: url('https://static.xx.fbcdn.net/rsrc.php/v3/yg/r/OH3b5mzlwwA.png?_nc_eui2=AeHvXMJ-Kt8PbatNoMEYmDSly_fTt-nCLGnL99O36cIsaRbs5VY714eKI7GJX4zMThWXyRARwBbbnsqsCxToXPPi');
+                                    background-position: 0px -340px;
+                                    background-size: 26px 656px;
+                                    width: 16px;
+                                    height: 16px;
+                                    background-repeat: no-repeat;
+                                    display: inline-block;
+                                  ">
+                                </i>
+                                <input
+                                  accept="video/*,  video/x-m4v, video/webm, video/x-ms-wmv, video/x-msvideo, video/3gpp, video/flv, video/x-flv, video/mp4, video/quicktime, video/mpeg, video/ogv, .ts, .mkv, image/*, image/heic, image/heif"
+                                  type="file"
+                                  style="display: none;"
+                                />
+                              </div>
+
+                              <div title="Comment with a GIF" class="comment-on-post-2-icon">
+                                <i
+                                  style="
+                                    background-image: url('https://static.xx.fbcdn.net/rsrc.php/v3/yg/r/OH3b5mzlwwA.png?_nc_eui2=AeHvXMJ-Kt8PbatNoMEYmDSly_fTt-nCLGnL99O36cIsaRbs5VY714eKI7GJX4zMThWXyRARwBbbnsqsCxToXPPi');
+                                    background-position: 0px -448px;
+                                    background-size: 26px 656px;
+                                    width: 16px;
+                                    height: 16px;
+                                    background-repeat: no-repeat;
+                                    display: inline-block;
+                                  ">
+                                </i>
+                              </div>
+
+                              <div title="Comment with a Sticker" class="comment-on-post-2-icon">
+                                <i
+                                  style="
+                                    background-image: url('https://static.xx.fbcdn.net/rsrc.php/v3/yg/r/OH3b5mzlwwA.png?_nc_eui2=AeHvXMJ-Kt8PbatNoMEYmDSly_fTt-nCLGnL99O36cIsaRbs5VY714eKI7GJX4zMThWXyRARwBbbnsqsCxToXPPi');
+                                    background-position: 0px -574px;
+                                    background-size: 26px 656px;
+                                    width: 16px;
+                                    height: 16px;
+                                    background-repeat: no-repeat;
+                                    display: inline-block;
+                                  ">
+                                </i>
+                              </div>
+                            </div>
+
+                            <!-- send -->
+                            <div class="comment-on-post-2-send">
+                              <div aria-disabled="true" title="Comment"
+                                class="comment-on-post-2-icon" role="button" tabindex="-1">
+                                <i style="background-image: url(&quot;https://static.xx.fbcdn.net/rsrc.php/v3/yg/r/OH3b5mzlwwA.png?_nc_eui2=AeHvXMJ-Kt8PbatNoMEYmDSly_fTt-nCLGnL99O36cIsaRbs5VY714eKI7GJX4zMThWXyRARwBbbnsqsCxToXPPi&quot;); background-position: 0px -502px; background-size: 26px 656px; width: 16px; height: 16px; background-repeat: no-repeat; display: inline-block;"></i>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -1606,8 +1839,119 @@
 
       </div>
     </section>
-     <!-- ================Main-profile-user================ -->
-    <script src="./js/test.js"></script>
+
+    <!-- VIDEO OR IMAGE MODAL-->
+    <div class="modal fade" id="Video_OR_Image_1" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5 text-center" id="exampleModalToggleLabel">Create post</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="">
+              <div class="d-flex justify-items-center">
+                <div class="" style="border-radius: 50%;width: 40px;height: 40px;background: #606266;">
+                  <img src="./html/userImg/logoUser.png" alt="" style="width: 40px;height: 40px;">
+                </div>
+
+                <!-- Create post -->
+                <div class="" style="margin-left: 12px;">
+                  <div style="position: relative; bottom: 3px">
+                    <h6>Proxy MN</h6>
+                  </div>
+                  <div class="d-flex align-items-center gap-1" style="position: relative; bottom: 7px; background: #E4E6EB;padding: 0px 5px 0px 5px; border-radius: 5px;">
+                    <div class="" style="position: relative; bottom: 2px;">
+                      <img src="https://static.xx.fbcdn.net/rsrc.php/v3/ys/r/L39Daxsxmmw.png?_nc_eui2=AeGSzisonYs8SWqRRbl9_zUM7IOJAI68cdTsg4kAjrxx1I935fJOObZ1aKIvOK8XTL08AqtlUonU2HJPrAnh9lxa" alt="Public" height="12" width="12">
+                    </div>
+                    <div class="" style="font-size: 13px; font-weight: 600;">
+                      <span>Public</span>
+                    </div>
+                    <div class="">
+                      <i style="background-image: url(&quot;https://static.xx.fbcdn.net/rsrc.php/v3/yB/r/E9gaOoTzAC6.png?_nc_eui2=AeHKPi01gs4A9UY8FJajLD_d2ojHEplE3z_aiMcSmUTfPwZ-yRY8rTvnJfDYEe49lOoeRjBfkctj3K6nFpiWoRib&quot;); background-position: -70px -172px; background-size: 190px 186px; width: 12px; height: 12px; background-repeat: no-repeat; display: inline-block;"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- caption -->
+              <div class="d-flex gap-1">
+                <div class="" style="width: 100%;" id="custom_input_container">
+                  <textarea name="textarea_caption_input" id="textarea_caption_input" placeholder="What's on your mind?" style="width: 95%; outline: none; border: none;"></textarea>
+                </div>
+                <!-- emoji -->
+                <!-- <div class="select_emoji" id="select_emoji" style="font-size: 20px;cursor: pointer;">
+                  <i class="fa-regular fa-face-smile"></i>
+                </div> -->
+              </div>
+
+              <!-- Select image -->
+              <div class="Main_Select_image" id="Main_Select_image">
+                <div class="Select_image">
+                  <div class="Select_image_1">
+                    <input
+                      accept="image/*,image/heif,image/heic,video/*,video/mp4,video/x-m4v,video/x-matroska,.mkv"
+                      type="file"
+                      style="display: none;"
+                      id="fileInput"
+                    />
+                    <div class="">
+                      <div class="">
+                        <div class=""
+                          style="
+                          border-radius: max(
+                            0px,
+                            min(8px, ((100vw - 4px) - 100%) * 9999)
+                            ) / 8px;
+                          "
+                          >
+                          <div class="">
+                            <div class="text-center">
+                              <div class="logo_upload_video_image">
+                                <i
+                                  style="
+                                  background-image: url('https://static.xx.fbcdn.net/rsrc.php/v3/yG/r/9oLIQ46ecpP.png?_nc_eui2=AeFmcPB7CnsBG9rWg5WWn_6hhpn_qOU1dm-Gmf-o5TV2b3oxv7VTRDKNrj901A9-E_xzHeBcyctkZEz6o4aHkeVN');
+                                  background-position: 0px -64px;
+                                  background-size: 38px 122px;
+                                  width: 20px;
+                                  height: 20px;
+                                  background-repeat: no-repeat;
+                                  display: inline-block;
+                                  ">
+                                </i>
+                              </div>
+                              <div class="" style="font-weight: 600;">
+                                <span>Add Photos/Videos</span>
+                              </div>
+                              <div class="" style="font-size: 14px;">
+                                <span>or drag and drop</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="clear_video_image d-none" style="z-index: 9999;">
+                    <i class="fa-solid fa-xmark" id="clearImage"></i>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-primary col-12" id="Video_OR_Image_POST" disabled>Post</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================Main-profile-user================ -->
+    <script src="./js/profile.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/emojionearea/3.4.2/emojionearea.min.js"></script>
   </body>
 </html>
 
