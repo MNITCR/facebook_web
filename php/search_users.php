@@ -7,7 +7,7 @@ if (isset($_POST['searchQuery'])) {
 
     // Perform a database query to retrieve user data based on the search query
     // Replace this with your actual database query
-    $query = "SELECT id_user, first_name, surname, mobileOrEmail, password FROM user_table WHERE first_name LIKE '%$searchQuery%' OR surname LIKE '%$searchQuery%' OR mobileOrEmail LIKE '%$searchQuery%'";
+    $query = "SELECT user_id, first_name, surname, mobileOrEmail, password FROM user_table WHERE first_name LIKE '%$searchQuery%' OR surname LIKE '%$searchQuery%' OR mobileOrEmail LIKE '%$searchQuery%'";
     $result = mysqli_query($conn, $query);
 
     if ($result) {

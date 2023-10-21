@@ -25,15 +25,15 @@
     border-radius: 0px 0 8px 8px;
 }
 .main-Pro-Img-user{
-    min-width: 100%;
+    width: 100%;
     /* height: 400px; */
     display: flex;
     justify-content: center;
     overflow: hidden;
 }
 .main-Pro-Img-user img{
-    min-width: 100%;
-    min-height: 400px;
+    width: 100%;
+    height: 400px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -86,7 +86,7 @@
     border-radius: 50%;
     width: 170px;
     height: 170px;
-    background-color: #31A24C;
+    background-color: #606266;
     outline: #FFFFFF 3px solid;
 }
 .Profile-user-upload-1 i{
@@ -99,10 +99,6 @@
     cursor: pointer;
     font-size: 18px;
 }
-.Profile-user img{
-    width: 170px;
-    height: 170px;
-}
 
 .Main-user-user-Info-content{
     display: flex;
@@ -110,7 +106,6 @@
     justify-content: space-between;
     width: 100%;
     padding-left: 15px;
-    /* padding-right: 15px; */
 }
 .Main-user-user-Info-content .btn_3{
     display: flex;
@@ -118,12 +113,17 @@
     justify-content: center;
     align-items: center;
 }
+.btn_3 .group-btn-tow{
+    display: flex;
+    gap: 0.5rem;
+}
 .btn_3 .group-btn{
     padding: 6px 20px 6px 20px;
     background-color: #0861F2;
     border-radius: 5px;
     cursor: pointer;
     transition: background 0.2s;
+    white-space: nowrap;
 }
 .btn_3 .group-btn:hover{
     background: #136cfb;
@@ -154,6 +154,7 @@
     font-size: 16px;
     font-weight: 600;
     color: var(--color-nav-icon);
+    white-space: nowrap;
 }
 .content-on-profile-text span{
     cursor: pointer;
@@ -181,7 +182,9 @@
     bottom: 4.5rem;
     width: 66.8%;
     margin: auto;
-    /* background: red; */
+}
+.sub-user-user-Info{
+    display: flex;
 }
 .Main-sub-content-on-profile{
     position: relative;
@@ -190,9 +193,9 @@
 }
 .Main-sub-content-on-profile-1{
     padding-top: 18px;
-    /* padding-bottom: 18px; */
     display: flex;
     gap: 1rem;
+    /* background: #31A24C; */
 }
 
 /* on-profile-left */
@@ -257,7 +260,12 @@
     padding: 18px 18px 8px 18px;
     border-radius: 7px;
 }
-.sub-content-on-profile-createPost-1 .group-Post{
+.sub-content-on-profile-createPost-1-post{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.sub-content-on-profile-createPost-1-post .group-Post{
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -266,7 +274,7 @@
     border-radius: 5px;
     cursor: pointer;
 }
-.sub-content-on-profile-createPost-1 .group-Post:hover{
+.sub-content-on-profile-createPost-1-post .group-Post:hover{
     background: #cbcdd3;
 }
 
@@ -303,6 +311,7 @@
     border-radius: 5px;
     transition: background 0.3s;
     cursor: pointer;
+    white-space: nowrap;
 }
 .sub-content-on-profile-Setting-Posts .Setting_Post_on_hr-group:hover{
     background: var(--bg-white-nav);
@@ -362,6 +371,10 @@
 .main-group-social .group-social:hover{
     background: var(--bg-white-nav);
 }
+.Main-Social-post_PRO img{
+    width: 100%; height: 250px; border-radius: 3px;
+}
+
 
 /* main-comment-on-post */
 .main-comment-on-post{
@@ -415,10 +428,10 @@
     background: #fff;
     padding: 5px;
     border: 1px solid #ccc;
-    transition: visibility 2s ease;
     border-radius: 40px;
     display: flex;
     gap: 0.5rem;
+    transition: visibility 2s ease;
 }
 .icons-container img {
     height: 30px;
@@ -428,11 +441,11 @@
 .icons-container img:hover {
     transform: scale(1.2); /* Adjust the scale factor as needed */
 }
-
 #hover_show_reach:hover .icons-container{
     visibility: visible;
 }
 /* End Main-sub-content-on-profile */
+
 
 /* POP UP PHOTO/VIDEO */
 .Main_Select_image{
@@ -478,10 +491,229 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 99999;
+    z-index: 9;
 }
 .d-none{
     display: none;
 }
 /* End POP UP PHOTO/VIDEO */
+
+/* UPLOAD IMAGE PROFILE */
+.main-show-image-upload {
+    position: relative;
+}
+.show-image-upload {
+    position: relative;
+    overflow: hidden;
+}
+.show-image-upload img:active {
+    cursor: grabbing; /* Change cursor on hold */
+}
+.show-image-upload img {
+    width: 100%;
+    height: 250px;
+    border-radius: 3px;
+}
+.show-image-upload::before {
+    content: "";
+    position: absolute;
+    background: none;
+    width: 250px;
+    height: 250px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 1;
+    box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.5);
+    cursor: grab;
+}
+.main-resize-controls-line .sub-resize-controls-line{
+    width: 100%;
+    background: #CED0D4;
+    height: 3px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.resize-controls-line {
+    content: '';
+    position: absolute;
+    bottom: 8px;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 1px solid #cbcdd3;
+    background: #FFFFFF;
+    transition: display 0.3s ease;
+}
+/* END UPLOAD IMAGE PROFILE */
 /* *****************End Main-profile-user****************** */
+
+
+/* ======================Custom responsive Content =================== */
+@media (max-width: 992px) {
+    /* cover */
+    .sub-content-on-profile-data{
+        top: 45rem;
+        width: 100%;
+    }
+    .Main-user-user-Img{
+        width: 100%;
+    }
+    .main-Pro-Img-user-upload-photo-1 i{
+        position: relative;
+        left: 4.5px;
+    }
+    .main-Pro-Img-user-upload-photo_span span{
+        display: none;
+        text-align: center;
+    }
+    .Main-user-user-Info{
+        width: 100%;
+    }
+    /* end cover */
+
+
+    /* Profile */
+    .Profile-user{
+        margin: auto;
+    }
+    .Main-user-user-Info{
+        top: -4.5rem;
+        margin: auto;
+        padding-bottom: 10px;
+        width: 95%;
+    }
+    .sub-user-user-Info{
+        display: block;
+        margin: auto;
+    }
+    .Main-user-user-Info-content{
+        display: block;
+        align-items: center;
+        /* background: #000; */
+        margin-top: 1rem;
+        padding-left: 0px;
+    }
+    .Main-user-user-Info-content-text{
+        text-align: center;
+    }
+
+
+    /* content-on-profile */
+
+    /* left */
+    .on-profile-left{
+        width: 100%;
+        /* display: none; */
+    }
+    .sub-content-on-profile-Friends{
+        padding: 18px 10px 18px 10px;
+    }
+    .sub-content-on-profile-Photos{
+        padding: 18px 10px 18px 10px;
+    }
+    .sub-content-on-profile-Intro{
+        padding: 15px 10px 18px 10px;
+    }
+    /* end left */
+
+
+    /* right */
+    .on-profile-right{
+        width: 100%;
+        /* display: none; */
+    }
+    .sub-content-on-profile-createPost{
+        padding: 18px 10px 18px 10px;
+    }
+    .sub-content-on-profile-Setting-Posts{
+        padding: 18px 10px 0px 10px;
+    }
+    .sub-content-on-profile-All-Posts{
+        padding: 15px 10px 0px 10px;
+    }
+    /* end right */
+
+    .Main-sub-content-on-profile{
+        width: 95%;
+    }
+    .Main-sub-content-on-profile-1{
+        display: block;
+        /* grid-row: 1; */
+    }
+    .sub-content-on-profile-createPost-1-post{
+        gap: 0.3rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .sub-content-on-profile-createPost-1-post .group-Post{
+        padding: 7px 5px 7px 5px;
+        white-space: nowrap;
+        gap: 0.3rem;
+        font-size: 14px;
+    }
+    .sub-content-on-profile-createPost-1-post .group-Post img{
+        height: 18px;
+        width: 18px;
+    }
+    .sub-content-on-profile-createPost-1-post .group-Post img#live-video{
+        position: relative;
+        bottom: 1.5px;
+    }
+    .main-group-social .group-social{
+        padding: 7px 0px 7px 0px;
+    }
+    .sub-content-on-profile-Setting-Posts .Setting_Post_on_hr{
+        display: flex;
+        justify-content: space-between;
+    }
+    .sub-content-on-profile-Setting-Posts .Setting_Post_on_hr-group{
+        padding: 6px 5px 6px 5px;
+    }
+    /* end content-on-profile */
+}
+@media (max-width: 500px){
+    /* cover */
+    .sub-content-on-profile-data{
+        top: 34rem;
+        width: 100%;
+    }
+    .Main-user-user-Img{
+        height: 170px;
+        width: 95%;
+    }
+    .main-Pro-Img-user img{
+        height: 170px;
+        width: 95%;
+    }
+    /* end cover */
+
+    /* profile */
+    .Main-user-user-Info-content .btn_3{
+        display: block;
+        padding-bottom: 5px;
+    }
+    .btn_3 .group-btn{
+        margin-bottom: 10px;
+        text-align: center;
+    }
+    .btn_3 .group-btn-tow{
+        width: 100%;
+    }
+    .content-on-profile-hide{
+        display: none;
+    }
+    /* end profile */
+
+
+    /* on profile */
+    .Main-Social-post_PRO img{
+        height: 200px;
+    }
+    /* end on profile */
+}
+/* ======================End Custom responsive Content =================== */

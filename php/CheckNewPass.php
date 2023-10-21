@@ -10,8 +10,7 @@
         }else{
             $query = "UPDATE user_table SET password = '$dataConfirmNewPassword', updated_at = now() WHERE mobileOrEmail = '$dataEmailOrPhone'";
 
-            // Execute the query
-            $result = mysqli_query($conn, $query); // For MySQL, replace with your specific method if using PDO
+            $result = mysqli_query($conn, $query);
 
             if ($result) {
                 echo '<script>alert("Password updated successfully");window.location.href = "../../html/home/home.php";</script>';

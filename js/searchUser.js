@@ -34,7 +34,7 @@ $(document).ready(function() {
                                             <span style="font-size: 14px;">Facebook user</span>
                                         </div>
                                         <div class="d-flex align-items-center justify-content-center">
-                                            <button type="button" class="btn btn-secondary view-user" data-id="${user.id_user}">This is my account</button>
+                                            <button type="button" class="btn btn-secondary view-user" data-id="${user.user_id}">This is my account</button>
                                         </div>
                                     </div>
                                 </div>
@@ -57,7 +57,7 @@ $(document).ready(function() {
     $(document).on('click', '.view-user', function() {
         // Get the user details based on the data-id attribute
         var userId = $(this).data('id');
-        selectedUser = userData.find(user => user.id_user == userId);
+        selectedUser = userData.find(user => user.user_id == userId);
 
         // Populate the modal with user information
         $('#fullName').text(`${selectedUser.first_name} ${selectedUser.surname}`);

@@ -28,12 +28,13 @@
                         session_start();
 
                         // Retrieve the user data
-                        $getUserQuery = "SELECT first_name, surname, birthday_day, birthday_month, birthday_year FROM user_table WHERE mobileOrEmail = '$emailOrPhone'";
+                        $getUserQuery = "SELECT user_id, first_name, surname, birthday_day, birthday_month, birthday_year FROM user_table WHERE mobileOrEmail = '$emailOrPhone'";
                         $userResult = mysqli_query($conn, $getUserQuery);
 
                         if ($userResult && $userData = mysqli_fetch_assoc($userResult)) {
                             $FName = $userData['first_name'];
                             $LName = $userData['surname'];
+                            $_SESSION['user_id'] = $userData['user_id'];
                             $_SESSION['BIT_DAY'] = $userData['birthday_day'];
                             // Map numeric month to string representation
                             $monthMapping = [
