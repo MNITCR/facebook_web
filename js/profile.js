@@ -490,7 +490,6 @@ $(document).ready(function() {
                     data: { post_id: postId },
                     success: function (response) {
                         console.log(response);
-                        window.location.reload();
                         window.location.href = '../../html/home/home.php';
                     },
                     error: function (xhr, status, error) {
@@ -552,6 +551,9 @@ $(document).ready(function() {
 
 
     // ===============Upload Profile Image===================
+    $('#profile-text-upload').emojioneArea({
+        pickerPosition: 'bottom'
+    });
     //=========== get image on profile ===========
     $(document).ready(function () {
         $('.Profile-user-upload-1').on('click', function () {
@@ -572,6 +574,8 @@ $(document).ready(function() {
 
           var url = URL.createObjectURL(input.files[0]);
           $('#uploaded-image').attr('src', url);
+          $('#save-image-profile-upload').prop('disabled', false);
+          $('.main-resize-controls-line').addClass('d-flex').removeClass('d-none');
         });
 
         // Remove all elements
@@ -586,9 +590,12 @@ $(document).ready(function() {
 
           // Reset the file input value to allow re-uploading the same image
           $('#profile-file-upload').val('');
+          $('#save-image-profile-upload').prop('disabled', true);
+          $('.main-resize-controls-line').addClass('d-none').removeClass('d-flex');
         });
     });
     //=========== end get image on profile ===========
+
 
 
     $(document).ready(function () {
@@ -687,6 +694,7 @@ $(document).ready(function() {
 
         $('#save-image-profile-upload').on('click', function () {
             var input = $('#profile-file-upload')[0];
+
             if (input.files.length > 0) {
                 var image_path = input.files[0];
                 console.log(image_path);
@@ -701,18 +709,15 @@ $(document).ready(function() {
             $('.show-image-upload img').css('transform', transformValue);
         }
 
-        // function updateTransform() {
-        //     var transformValue = `translate3d(${translateX}px, 0, 0) scale(${imageSize})`;
-        //     $('.show-image-upload img').css('transform', transformValue);
-        //     console.log('Image scale:', imageSize);
-        // }
-
         function saveImageState(image_path) {
+            var pro_text_upload = $('#profile-text-upload').val();
+
             var formData = new FormData();
             formData.append('user_id', user_id);
             formData.append('image', image_path);
             formData.append('translateX', translateX);
             formData.append('imageSize', imageSize);
+            formData.append('txt_pro', pro_text_upload);
 
             $.ajax({
                 type: 'POST',
@@ -722,6 +727,7 @@ $(document).ready(function() {
                 contentType: false,
                 success: function (response) {
                     console.log('Image state saved:', response);
+                    window.location.href='../home/home.php';
                 },
                 error: function (error) {
                     console.error('Error saving image state:', error);
@@ -731,5 +737,33 @@ $(document).ready(function() {
         //=========== end upload image into database ===========
     });
     // ===============end Upload Profile Image===================
+
+
+
+    //================Menu on Profile ==================
+    const spans = document.querySelectorAll('.content-on-profile-text span');
+    spans.forEach(span => {
+        span.addEventListener('click', function () {
+            // Remove blur class from all spans
+            spans.forEach(s => s.classList.remove('blur'));
+
+            // Add blur class to the clicked span
+            this.classList.add('blur');
+        });
+    });
+
+    $(document).ready(function () {
+        var menuItems = $('.Menu-Content-About-hover');
+
+        menuItems.click(function () {
+            // Remove blur class from all items
+            menuItems.removeClass('blur');
+
+            // Add blur class to the clicked item
+            $(this).addClass('blur');
+        });
+    });
+
+    //================End Menu on Profile ==================
 });
 // =====================end nav right=====================

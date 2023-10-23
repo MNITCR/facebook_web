@@ -22,108 +22,263 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <style>
-        .main-resize-controls-line .resize-controls-line {
-            width: 95%;
-            background: #CED0D4;
-            height: 3px;
-            margin: auto;
-            position: relative;
-        }
-
-        .resize-controls-line::before {
-            content: '';
-            position: absolute;
-            bottom: 8px;
-            margin-left: 0px;
-            transform: translate(-50%, -50%);
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background-color: transparent;
-            border: 1px solid #cbcdd3;
-            background: #FFFFFF;
-            transition: margin 0.3s ease, transform 0.3s ease;
-        }
-    </style>
+    <link rel="stylesheet" href="./css/Profile.css">
 </head>
 <body>
-    <div class="main-image-upload">
-        <div class="sub-image-upload">
-            <div class="text-center p-2" style="cursor: pointer;background: #DFE9F2;font-weight: 600;" id="profile-photo-upload">
-              <span><i class="fa-solid fa-upload"></i>&nbsp;Upload photo</span>
-            </div>
-            <div class="d-none">
-              <input type="file" class="form-control" id="profile-file-upload">
-            </div>
+  <div class="content-on-profile">
+    <div class="" style="display: flex;justify-content: space-between;align-items: center;">
+        <div class="content-on-profile-text">
+          <span class="content-on-profile-post">Posts</span>
+          <span class="content-on-profile-about">About</span>
+          <span class="content-on-profile-friend content-on-profile-hide">Friends</span>
+          <span class="content-on-profile-phonto content-on-profile-hide">Photos</span>
+          <span class="content-on-profile-video content-on-profile-hide">Videos</span>
+          <span class="content-on-profile-check-ins content-on-profile-hide">Check-ins</span>
+          <span class="dropdown content-on-profile-more" data-bs-toggle="dropdown" aria-expanded="false">
+              More <i class="fa-solid fa-caret-down"></i>
+              <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Sports</a></li>
+                  <li><a class="dropdown-item" href="#">Music</a></li>
+                  <li><a class="dropdown-item" href="#">Movies</a></li>
+                  <li><a class="dropdown-item" href="#">TV shows</a></li>
+                  <li><a class="dropdown-item" href="#">Books</a></li>
+                  <li><a class="dropdown-item" href="#">Likes</a></li>
+                  <li><a class="dropdown-item" href="#">Events</a></li>
+                  <li><a class="dropdown-item" href="#">Reviews given</a></li>
+              </ul>
+          </span>
         </div>
-        <div class="main-show-image-upload">
-          <div class="show-image-upload" id="draggable-container">
-            <img id="uploaded-image" src="" alt="Uploaded Image" style="width: 100%; height: 250px; border-radius: 3px; display: none;"/>
-            <div class="circle-overlay"></div>
-          </div>
-        </div>
-
-        <div class="main-resize-controls-line mt-3" style="width: 100%;display: flex;justify-content: space-between;align-items: center">
-          <div class="zoom-down" style="cursor: pointer;" onclick="zoom('out')">
-            <i class="fa-solid fa-minus"></i>
-          </div>
-          <div class="" style="width: 100%;">
-            <div class="resize-controls-line"></div>
-          </div>
-          <div class="zoom-up" style="cursor: pointer;" onclick="zoom('in')">
-            <i class="fa-solid fa-plus"></i>
-          </div>
+        <div class="group-btn">
+            <svg fill="currentColor" viewBox="0 0 24 24" width="2em" height="1em"><circle cx="12" cy="12" r="2.5"></circle><circle cx="19.5" cy="12" r="2.5"></circle><circle cx="4.5" cy="12" r="2.5"></circle></svg>
         </div>
     </div>
+  </div>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const resizeControlsLine = document.querySelector('.resize-controls-line::before');
-      const zoomUpButton = document.querySelector('.zoom-up');
-      const zoomDownButton = document.querySelector('.zoom-down');
+  <!-- ================ On profile post ================= -->
+  <div class="sub-content-on-profile-data">
+    <div class="Main-sub-content-on-profile">
+    </div>
+  </div>
+  <!-- ================ End On profile post ================= -->
 
-      zoomUpButton.addEventListener('click', function () {
-        resizeControlsLine.style.marginLeft = 'unset';
-        resizeControlsLine.style.transform = 'translate(50%, -50%)';
-        resizeControlsLine.style.left = 'unset';
-        resizeControlsLine.style.right = '8px'; // Adjust the value based on your requirements
-      });
 
-      zoomDownButton.addEventListener('click', function () {
-        resizeControlsLine.style.right = 'unset';
-        resizeControlsLine.style.left = '8px'; // Adjust the value based on your requirements
-        resizeControlsLine.style.marginLeft = '0px';
-        resizeControlsLine.style.transform = 'translate(-50%, -50%)';
+  <!-- ================ On profile About ================= -->
+  <div class="sub-content-on-profile-data">
+    <div class="Main-sub-content-on-About">
+      <div class="Main-Content-About">
+        <div class="Sub-Content-About-1">
+          <div class="Menu-Content-About">
+            <div class="">
+              <h5>About</h5>
+            </div>
+            <div class="Menu-Content-About-hover" data-menu-item="Overview">
+              <span>Overview</span>
+            </div>
+            <div class="Menu-Content-About-hover" data-menu-item="Work">
+              <span>Work and education</span>
+            </div>
+            <div class="Menu-Content-About-hover" data-menu-item="Places">
+              <span>Places lived</span>
+            </div>
+            <div class="Menu-Content-About-hover" data-menu-item="Contact">
+              <span>Contact and basic info</span>
+            </div>
+            <div class="Menu-Content-About-hover" data-menu-item="Family">
+              <span>Family and relationships</span>
+            </div>
+            <div class="Menu-Content-About-hover" data-menu-item="Details">
+              <span>Details about you</span>
+            </div>
+            <div class="Menu-Content-About-hover" data-menu-item="Life">
+              <span>Life events</span>
+            </div>
+          </div>
+
+          <div class="Detail-Content-About">
+            <div class="p-4" style="display: flex;align-items: center;">
+              <div class="" style="width: 20px; height: 20px;border-radius: 50%;outline: 2px solid #1F75D7;justify-content: center;align-items: center;display: flex;">
+                <i class="fa-solid fa-plus" style="margin-top: 2px;color: #0861F2;"></i>
+              </div>
+              <div class="ms-2 Detail-Content-About-Text">
+                <a href="" style="color: #1F75D7;font-weight: 600;"> Add a workplace</a>
+              </div>
+            </div>
+
+            <div class="p-4" style="display: flex;align-items: center;">
+              <div class="" style="width: 20px; height: 20px;border-radius: 50%;outline: 2px solid #1F75D7;justify-content: center;align-items: center;display: flex;">
+                <i class="fa-solid fa-plus" style="margin-top: 2px;color: #0861F2;"></i>
+              </div>
+              <div class="ms-2 Detail-Content-About-Text">
+                <a href="" style="color: #1F75D7;font-weight: 600;"> Add high school</a>
+              </div>
+            </div>
+
+            <div class="p-4" style="display: flex;align-items: center;">
+              <div class="" style="width: 20px; height: 20px;border-radius: 50%;outline: 2px solid #1F75D7;justify-content: center;align-items: center;display: flex;">
+                <i class="fa-solid fa-plus" style="margin-top: 2px;color: #0861F2;"></i>
+              </div>
+              <div class="ms-2 Detail-Content-About-Text">
+                <a href="" style="color: #1F75D7;font-weight: 600;"> Add college</a>
+              </div>
+            </div>
+
+            <div class="p-4" style="display: flex;align-items: center;">
+              <div class="" style="width: 20px; height: 20px;border-radius: 50%;outline: 2px solid #1F75D7;justify-content: center;align-items: center;display: flex;">
+                <i class="fa-solid fa-plus" style="margin-top: 2px;color: #0861F2;"></i>
+              </div>
+              <div class="ms-2 Detail-Content-About-Text">
+                <a href="" style="color: #1F75D7;font-weight: 600;"> Add current city</a>
+              </div>
+            </div>
+
+            <div class="p-4" style="display: flex;align-items: center;">
+              <div class="" style="width: 20px; height: 20px;border-radius: 50%;outline: 2px solid #1F75D7;justify-content: center;align-items: center;display: flex;">
+                <i class="fa-solid fa-plus" style="margin-top: 2px;color: #0861F2;"></i>
+              </div>
+              <div class="ms-2 Detail-Content-About-Text">
+                <a href="" style="color: #1F75D7;font-weight: 600;"> Add hometown</a>
+              </div>
+            </div>
+
+            <div class="p-4" style="display: flex;align-items: center;">
+              <div class="" style="width: 20px; height: 20px;border-radius: 50%;outline: 2px solid #1F75D7;justify-content: center;align-items: center;display: flex;">
+                <i class="fa-solid fa-plus" style="margin-top: 2px;color: #0861F2;"></i>
+              </div>
+              <div class="ms-2 Detail-Content-About-Text">
+                <a href="" style="color: #1F75D7;font-weight: 600;"> Add a relationship status</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ================ End On profile About ================= -->
+  <script>
+    const spans = document.querySelectorAll('.content-on-profile-text span');
+
+    spans.forEach(span => {
+      span.addEventListener('click', function () {
+        // Remove blur class from all spans
+        spans.forEach(s => s.classList.remove('blur'));
+
+        // Add blur class to the clicked span
+        this.classList.add('blur');
       });
     });
-
-
-
 
     $(document).ready(function () {
-        $('.Profile-user-upload-1').on('click', function () {
-          $('#UPLOAD_PROFILE_IMAGE').modal('show');
-        });
+      var menuItems = $('.Menu-Content-About-hover');
+      var Detail_Content = $('.Detail-Content-About');
 
-        // click on profile image
-        $('#profile-photo-upload').on('click', function (e) {
-          $('#profile-file-upload').click();
-        });
 
-        // handle file input change
-        $('#profile-file-upload').on('change', function () {
-          $('#profile-photo-upload').css('display', 'none');
-          $('#uploaded-image').css('display', 'block');
-          $('.resize-controls').addClass('d-block').removeClass('d-none');
-          var input = this;
+        // Store text arrays
+      var contentArrays = {
+        Overview: ['Add a workplace', 'Add high school', 'Add college', 'Add current city', 'Add hometown', 'Add a relationship status'],
+        Work: ['Add a workplace', 'Add high school', 'Add college'],
+        Places: ['Add current city', 'Add hometown', 'Add city'],
+        Contact: ['Add a mobile phone', 'Add a website', 'Add a social link', 'Add a language'],
+        Family: ['Add a relationship status', 'Add family member'],
+        Details: ['Write some details about yourself', 'Add a name pronunciation', 'Add a nickname, a birth name...', 'Add your favorite quotations', 'Learn about blood donation'],
+        Life: ['Add a life event']
+      };
 
-          var url = URL.createObjectURL(input.files[0]);
-          $('#uploaded-image').attr('src', url);
+      // Map each menu item to its corresponding titles
+      var TitlesMap = {
+        Work: {
+          'Add a workplace': 'Work',
+          'Add high school': 'High school',
+          'Add college': 'College'
+        },
+        Places: 'Places lived',
+        Contact: {
+          'Add a mobile phone': 'Contact info',
+          'Add a social link': '',
+          'Add a website': 'Websites and social links',
+          'Add a language': 'Basic info'
+        },
+        Family : {
+          'Add a relationship status': 'Relationship',
+          'Add family member': 'Family members',
+        },
+        Details: {
+          'Write some details about yourself' : 'About you',
+          'Add a name pronunciation' : 'Name pronunciation',
+          'Add a nickname, a birth name...' : 'Other names',
+          'Add your favorite quotations' : 'Favorite quotes',
+          'Learn about blood donation' : 'Blood donations'
+        },
+        Life: {
+          'Add a life event' : 'Life events'
+        }
+      };
+
+      // Load stored content from localStorage
+      var storedContent = localStorage.getItem('Detail_Content');
+      if (storedContent) {
+        Detail_Content.html(storedContent);
+      }
+
+      menuItems.click(function () {
+        // Remove blur class from all items
+        menuItems.removeClass('blur');
+
+        // Add blur class to the clicked item
+        $(this).addClass('blur');
+
+        // Clear previous content
+        Detail_Content.empty();
+
+        // Get the clicked menu item
+        var clickedMenuItem = $(this).data('menu-item');
+
+        // Loop through the corresponding array and append content
+        contentArrays[clickedMenuItem].forEach(function (item, index) {
+          var title = '';
+          if(clickedMenuItem === 'Overview'){
+            title = '';
+          }
+          else if (clickedMenuItem === 'Places') {
+            title = index === 0 ? TitlesMap[clickedMenuItem] : '';
+          }else if(clickedMenuItem === 'Work') {
+            title = TitlesMap[clickedMenuItem][item];
+          }
+          else if(clickedMenuItem === 'Contact') {
+            title = index == 2 ? '' : TitlesMap[clickedMenuItem][item];
+          }else if(clickedMenuItem === 'Family'){
+            title = TitlesMap[clickedMenuItem][item];
+          }else if(clickedMenuItem === 'Details'){
+            title = TitlesMap[clickedMenuItem][item];
+          }else{
+            title = TitlesMap[clickedMenuItem][item];
+          };
+
+          Detail_Content.append(`
+            <h6 class="">${title}</h6>
+            <div class="" style="display: flex;align-items: center;padding-top:20px; padding-bottom: 20px;">
+              <div class="" style="width: 20px; height: 20px;border-radius: 50%;outline: 2px solid #1F75D7;justify-content: center;align-items: center;display: flex;">
+                <i class="fa-solid fa-plus" style="margin-top: 2px;color: #0861F2;"></i>
+              </div>
+              <div class="ms-2 Detail-Content-About-Text">
+                <a href="" style="color: #1F75D7;font-weight: 600;"> ${item}</a>
+              </div>
+            </div>
+          `);
         });
+        // Save content to localStorage
+        localStorage.setItem('Detail_Content', Detail_Content.html());
+
+        // Store the clicked menu item in localStorage
+        localStorage.setItem('clickedMenuItem', clickedMenuItem);
+      });
+
+      // Retrieve the clicked menu item from localStorage on page load
+      var storedMenuItem = localStorage.getItem('clickedMenuItem');
+      if (storedMenuItem) {
+        // Add blur class to the previously clicked item
+        $('[data-menu-item="' + storedMenuItem + '"]').addClass('blur');
+      }
     });
-</script>
-
-
+  </script>
 </body>
 </html>

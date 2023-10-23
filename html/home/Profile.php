@@ -38,7 +38,7 @@
                 <div class="sub-user-user-Info">
                     <!-- image profile -->
                     <div class="Profile-user">
-                        <div class="" style="width: 170px; height: 170px;overflow: hidden; border-radius: 50%; object-fit: cover;">
+                        <div class="" style="width: 170px; height: 170px;overflow: hidden; border-radius: 50%;">
                             <?php
                                 include '../../php/conn.php';
 
@@ -54,9 +54,12 @@
                                     $stmt->bind_result($profile_image_path, $profile_image_size, $translateX);
 
                                     if ($stmt->fetch()) {
-                                        echo '<img src="../' . $profile_image_path . '" alt="Profile Image" style="width: auto; height: 170px;transform: translateX(' . $translateX . 'px);transform: scale(' .$profile_image_size.');">';
+                                        if ($profile_image_path) {
+                                            echo '<img src="../' . $profile_image_path . '" alt="Profile Image" style="width: auto; height: 170px;transform: translateX(' . $translateX . 'px);transform: scale(' .$profile_image_size.');">';
+                                        } else {
+                                            echo '<img src="../../html/userImg/logoUser1.png" alt="" style="width: 170px; height: 170px;border-radius: 50%;">';
+                                        }
                                     } else {
-                                        // User does not have an image, display the default image
                                         echo '<img src="../../html/userImg/logoUser1.png" alt="" style="border-radius: 50%;">';
                                     }
 
@@ -67,7 +70,6 @@
 
                                 $conn->close();
                             ?>
-                            <!-- <img src="../../html/userImg/logoUser1.png" alt="" style="border-radius: 50%;"> -->
                         </div>
                         <div class="Profile-user-upload-1">
                             <i class="fa-solid fa-camera"></i>
@@ -104,13 +106,13 @@
                 <div class="content-on-profile">
                     <div class="" style="display: flex;justify-content: space-between;align-items: center;">
                         <div class="content-on-profile-text">
-                            <span>Posts</span>
-                            <span>About</span>
-                            <span class="content-on-profile-hide">Friends</span>
-                            <span class="content-on-profile-hide">Photos</span>
-                            <span class="content-on-profile-hide">Videos</span>
-                            <span class="content-on-profile-hide">Check-ins</span>
-                            <span class="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                            <span class="content-on-profile-post blur">Posts</span>
+                            <span class="content-on-profile-about">About</span>
+                            <span class="content-on-profile-friend content-on-profile-hide">Friends</span>
+                            <span class="content-on-profile-photo content-on-profile-hide">Photos</span>
+                            <span class="content-on-profile-video content-on-profile-hide">Videos</span>
+                            <span class="content-on-profile-check-ins content-on-profile-hide">Check-ins</span>
+                            <span class="dropdown content-on-profile-more" data-bs-toggle="dropdown" aria-expanded="false">
                                 More <i class="fa-solid fa-caret-down"></i>
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="#">Sports</a></li>
@@ -816,7 +818,7 @@
                                     </div>
                                 </div>
 
-                                <div class="main-resize-controls-line mt-3" style="width: 100%;display: flex;justify-content: space-between;align-items: center">
+                                <div class="main-resize-controls-line mt-3 d-none" style="width: 100%;display: flex;justify-content: space-between;align-items: center">
                                     <div class="zoom-down" style="cursor: pointer;color:#BEC3C9">
                                         <i class="fa-solid fa-minus"></i>
                                     </div>
@@ -832,8 +834,8 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-white text-primary" data-bs-dismiss="modal" style="font-weight: 600;">Cancel</button>
-                    <button type="submit" class="btn btn-primary" id="save-image-profile-upload" style="font-weight: 600;">Save</button>
+                    <button type="button" class="btn btn-white text-primary" id="clear-image-profile-upload" style="font-weight: 600;">Cancel</button>
+                    <button type="submit" class="btn btn-primary" id="save-image-profile-upload" style="font-weight: 600;" disabled>Save</button>
                 </div>
             </div>
         </div>

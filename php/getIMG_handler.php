@@ -5,8 +5,8 @@
 
     // Query to fetch posts with associated image URLs
     $query = "SELECT p.*,GROUP_CONCAT(sir.image_url) AS image_urls, text_icon FROM
-            posts_table p LEFT JOIN store_icon_reach sir ON p.post_id = sir.post_id
-            WHERE p.user_id = '$user_id' GROUP BY p.post_id ORDER BY p.post_id DESC
+        posts_table p LEFT JOIN store_icon_reach sir ON p.post_id = sir.post_id
+        WHERE p.user_id = '$user_id' GROUP BY p.post_id ORDER BY p.post_id DESC
     ";
 
     $result = mysqli_query($conn, $query);
